@@ -16,7 +16,7 @@ namespace Microsoft.Extensions.DependencyInjection
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ECommerceContext>(opt =>
-                opt.UseSqlServer(configuration.GetConnectionString("ECommerceSystem"), b => b.MigrationsAssembly("API")));
+                opt.UseSqlServer(configuration.GetConnectionString("ECommerceSystem"), b => b.MigrationsAssembly("Infrastructure")));
             services.AddScoped<IAppDbContext>(provider => provider.GetRequiredService<ECommerceContext>());
             return services;
         }
