@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.EntityConfiguration;
 
-public class ShippingCompanyConfiguration : IEntityTypeConfiguration<ShippingCompany>
-{
-    public void Configure(EntityTypeBuilder<ShippingCompany> builder)
-    {
-        builder.HasKey(X => X.Id);
-    }
-}
+//public class ShippingCompanyConfiguration : IEntityTypeConfiguration<ShippingCompany>
+//{
+//    public void Configure(EntityTypeBuilder<ShippingCompany> builder)
+//    {
+//        builder.HasKey(X => X.Id);
+//    }
+//}

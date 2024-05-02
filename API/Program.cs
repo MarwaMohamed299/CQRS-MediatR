@@ -5,6 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 #region DefaultServices
+builder.Services.AddInfrastructureServices(builder.Configuration);
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -13,8 +15,8 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 #region ConnectionString
-var ConnectionString = builder.Configuration.GetConnectionString("ECommerceSystem");
-builder.Services.AddDbContext<ECommerceContext>(options => options.UseSqlServer(ConnectionString));
+//var ConnectionString = builder.Configuration.GetConnectionString("ECommerceSystem");
+//builder.Services.AddDbContext<ECommerceContext>(options => options.UseSqlServer(ConnectionString));
 #endregion
 
 #region CORS Policy

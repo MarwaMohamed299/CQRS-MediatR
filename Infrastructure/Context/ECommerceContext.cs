@@ -13,9 +13,14 @@ namespace Domain.Data.Context;
 public class ECommerceContext : DbContext , IAppDbContext
 {
     public DbSet<ShippingCompany> ShippingCompanies => Set<ShippingCompany>();
- // public DbSet<Order> Orders => Set<Order>();
- // public DbSet<Product> Products => Set<Product>();
- // public DbSet<User> Users => Set<User>();
+    // public DbSet<Order> Orders => Set<Order>();
+    // public DbSet<Product> Products => Set<Product>();
+    // public DbSet<User> Users => Set<User>();
+    public ECommerceContext()
+    {
+        
+
+    }
     public ECommerceContext(DbContextOptions<ECommerceContext> options) : base(options)
     { }
    
@@ -23,26 +28,26 @@ public class ECommerceContext : DbContext , IAppDbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<ShippingCompany>()
-        .HasKey(s => s.Id);
+        //modelBuilder.Entity<ShippingCompany>()
+        //.HasKey(s => s.Id);
 
-        //product
-        //modelBuilder.Entity<Product>()
-        //    .Property(P => P.Price);
-        // .HasColumnType("decimal(18,2)");
+        ////product
+        ////modelBuilder.Entity<Product>()
+        ////    .Property(P => P.Price);
+        //// .HasColumnType("decimal(18,2)");
 
-        ////Order
-        //modelBuilder.Entity<Order>()
-        //   .HasMany(o => o.Products)
-        //   .WithOne(p => p.Order)
-        //   .HasForeignKey(p => p.OrderId)
-        //   .OnDelete(DeleteBehavior.NoAction);
+        //////Order
+        ////modelBuilder.Entity<Order>()
+        ////   .HasMany(o => o.Products)
+        ////   .WithOne(p => p.Order)
+        ////   .HasForeignKey(p => p.OrderId)
+        ////   .OnDelete(DeleteBehavior.NoAction);
 
-        //// User
-        //modelBuilder.Entity<User>()
-        // .HasMany(u => u.Orders)
-        // .WithOne(o => o.User)
-        // .HasForeignKey(o => o.UserId);
+        ////// User
+        ////modelBuilder.Entity<User>()
+        //// .HasMany(u => u.Orders)
+        //// .WithOne(o => o.User)
+        //// .HasForeignKey(o => o.UserId);
 
         //shipping companies
 
