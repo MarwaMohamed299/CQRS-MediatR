@@ -12,7 +12,7 @@ namespace Application.Interfaces
     {
         DbSet<ShippingCompany>ShippingCompanies { get; }
         DbSet<User> Users { get; }
-        DbSet<Product> Products { get; }
+        DbSet<Product> Products { get;}
         DbSet<Order> Orders { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 

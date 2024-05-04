@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace Domain.Events.Orders;
 
 public class OrderDeletedEvent :BaseEvent
 {
-    public OrderDeletedEvent(OrderDeletedEvent item)
+    public OrderDeletedEvent(Order item)
     {
         Item = item;
     }
-    public OrderDeletedEvent Item { get; }
+    public Order Item { get; }
 }

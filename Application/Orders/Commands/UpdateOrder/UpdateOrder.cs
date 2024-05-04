@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Ardalis.GuardClauses;
 using Domain.Data.Entities;
 using MediatR;
 using System;
@@ -11,7 +12,9 @@ namespace Application.Orders.Commands.UpdateOrder
 {
     public record  UpdateOrderCommand : IRequest
     {
-        public List<Product> Products { get; init; } = new List<Product>();
+        public int Id { get; init; }
+
+        public List<Product> Products { get; set; } = new List<Product>();
         public string UserId { get; init; } = string.Empty;
         public DateTime CreatedAt { get; init; }
         public DateTime? UpdatedAt { get; init; }
@@ -19,15 +22,23 @@ namespace Application.Orders.Commands.UpdateOrder
     }
     public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand>
     {
-        private readonly object _context;
+        private readonly IAppDbContext _context;
 
-        public UpdateOrderCommandHandler(IAppDbContext Context)
+        public UpdateOrderCommandHandler(IAppDbContext context)
         {
-            _context = Context;   
+            _context = context;
         }
-        public Task Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
+
+        public async Task Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            var order = await _context.Orders.FindAsync(new object[] { request.Id }, cancellationToken);
+
+            Guard.Against.NotFound(request.Id, order);
+
+            order.Products = request.Products;
+
+            await _context.SaveChangesAsync(cancellationToken);
         }
     }
+
 }

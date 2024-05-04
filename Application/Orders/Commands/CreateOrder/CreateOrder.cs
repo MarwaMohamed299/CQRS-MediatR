@@ -17,7 +17,6 @@ namespace Application.Orders.Commands.CreateOrder
         public string UserId { get; init; } = string.Empty;
         public DateTime CreatedAt { get; init; }
         public DateTime? UpdatedAt { get; init; }
-        public DateTime? ConfirmedAt { get; init; }
         
     }
     public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand,int>
@@ -35,9 +34,7 @@ namespace Application.Orders.Commands.CreateOrder
             {
                 UserId = request.UserId,
                 CreatedAt = request.CreatedAt,
-                UpdatedAt = request.UpdatedAt,
-                ConfirmedAt = request.ConfirmedAt
-                
+                UpdatedAt = request.UpdatedAt,                
             };
 
             var products = await _context.Products  ///?

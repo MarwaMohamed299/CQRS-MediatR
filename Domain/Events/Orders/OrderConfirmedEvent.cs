@@ -1,13 +1,14 @@
 ﻿using Domain.Common;
+using Domain.Data.Entities;
 
 
 namespace Domain.Events.Orders;
 
 public class OrderConfirmedEvent : BaseEvent
 {
-    public OrderConfirmedEvent(OrderConfirmedEvent item)
+    public OrderConfirmedEvent(Order item)
     {
         Item = item;
     }
-    public OrderConfirmedEvent Item { get; }
+    public Order Item { get; }
 }

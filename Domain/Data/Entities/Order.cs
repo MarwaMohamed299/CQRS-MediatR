@@ -14,7 +14,7 @@ namespace Domain.Data.Entities
         public DateTime? UpdatedAt { get; set; }
         public DateTime? ConfirmedAt { get; set; }
         //Nav Prop
-        public List<Product> Products => new List<Product>();
+        public List<Product> Products  { get; set; } = new List<Product>();
         public string UserId { get; set; } = string.Empty;
         public User? User { get; set; }
     }
