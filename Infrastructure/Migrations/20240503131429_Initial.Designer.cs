@@ -4,6 +4,7 @@ using Domain.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ECommerceContext))]
-    partial class ECommerceContextModelSnapshot : ModelSnapshot
+    [Migration("20240503131429_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,56 +45,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Orders");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2555),
-                            UserId = "2"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2559),
-                            UserId = "1"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2561),
-                            UserId = "2"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2564),
-                            UserId = "3"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2566),
-                            UserId = "2"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2568),
-                            UserId = "4"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2571),
-                            UserId = "3"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2573),
-                            UserId = "2"
-                        });
                 });
 
             modelBuilder.Entity("Domain.Data.Entities.Product", b =>
@@ -117,43 +70,6 @@ namespace Infrastructure.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Product 1",
-                            OrderId = 1,
-                            Price = 10.00m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Product 2",
-                            OrderId = 5,
-                            Price = 20.00m
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Product 3",
-                            OrderId = 2,
-                            Price = 30.00m
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Product 4",
-                            OrderId = 3,
-                            Price = 40.00m
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Product 5",
-                            OrderId = 4,
-                            Price = 50.00m
-                        });
                 });
 
             modelBuilder.Entity("Domain.Data.Entities.ShippingCompany", b =>
@@ -266,68 +182,6 @@ namespace Infrastructure.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "1",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "66eb0dd9-0b2b-4c6b-9815-02ba33077db4",
-                            CreationDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2447),
-                            Email = "john.doe@example.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "password123",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "6601f2f1-d437-4890-a5a4-0b6cbf47e73b",
-                            TwoFactorEnabled = false,
-                            UserName = "john doe"
-                        },
-                        new
-                        {
-                            Id = "2",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "9961c018-d2f1-41b2-a3bd-8f07324637db",
-                            CreationDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2506),
-                            Email = "jane.doe@example.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "password123",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "359bb106-f85b-4a9c-98db-afb29b3da200",
-                            TwoFactorEnabled = false,
-                            UserName = "jane doe"
-                        },
-                        new
-                        {
-                            Id = "3",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "0fcdb75c-2d1b-44fa-a908-06b455381c37",
-                            CreationDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2527),
-                            Email = "Sara.doe@example.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "password123",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "620ff498-0fbc-4815-9fd1-9fd875f5c219",
-                            TwoFactorEnabled = false,
-                            UserName = "Sara doe"
-                        },
-                        new
-                        {
-                            Id = "4",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "a8461ec7-ed6d-4130-b504-e612b057f4ee",
-                            CreationDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2533),
-                            Email = "Sandy.Jakson@example.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PasswordHash = "password123",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "cdf69d3c-5c5a-41bb-ac93-63fedd3d628f",
-                            TwoFactorEnabled = false,
-                            UserName = "Sandy Jakson"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

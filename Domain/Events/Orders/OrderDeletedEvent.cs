@@ -9,9 +9,9 @@ namespace Domain.Events.Orders;
 
 public class OrderDeletedEvent :BaseEvent
 {
-    public OrderDeletedEvent(OrderConfirmedEvent item)
+    public OrderDeletedEvent(OrderDeletedEvent item)
     {
         Item = item;
     }
-    public OrderConfirmedEvent Item { get; }
+    public OrderDeletedEvent Item { get; }
 }

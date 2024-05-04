@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Domain.Events.Orders;
 
-public class OrderCreatedEvent :BaseEvent
+public class OrderCreatedEvent : BaseEvent
 {
-    public OrderCreatedEvent(OrderConfirmedEvent item)
+    public OrderCreatedEvent(Order item)
     {
         Item = item; 
     }
-    public OrderConfirmedEvent Item { get; }
+    public Order Item { get; private set; }
 }
