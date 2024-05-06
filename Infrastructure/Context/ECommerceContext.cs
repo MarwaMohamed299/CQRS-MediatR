@@ -44,7 +44,8 @@ namespace Domain.Data.Context
                 .HasMany(o => o.Products)
                 .WithOne(p => p.Order)
                 .HasForeignKey(p => p.OrderId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
 
             // Product
             modelBuilder.Entity<Product>()

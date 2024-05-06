@@ -14,7 +14,7 @@ namespace Domain.Data.Entities
         public int Quantity { get; set; }
         //Nav Prop
         public Order? Order { get; set; }
-        public int OrderId { get; set; }
+        public int? OrderId { get; set; }
 
     }
 }

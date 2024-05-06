@@ -112,7 +112,7 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderId")
+                    b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -286,14 +286,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ed7ae808-892b-4938-b697-2ae15acb8e2b",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5080),
+                            ConcurrencyStamp = "a7212f26-2cfc-4d95-b04f-a08ffb26038f",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3474),
                             Email = "john.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "456b6f9e-26e7-4d8e-81c9-d241b82e0da0",
+                            SecurityStamp = "eb3801f9-aecc-4e60-8e0e-844a9b68b434",
                             TwoFactorEnabled = false,
                             UserName = "john doe"
                         },
@@ -301,14 +301,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "57abc45d-db06-4d99-b8bb-d18b1829d035",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5159),
+                            ConcurrencyStamp = "cfdb335e-efd9-4a04-a6c4-f529edca3fac",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3554),
                             Email = "jane.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0ee8f974-8f4f-4308-92e7-2a760fd6a52f",
+                            SecurityStamp = "a60e1e8d-a594-4026-a528-25eb5df28b2e",
                             TwoFactorEnabled = false,
                             UserName = "jane doe"
                         },
@@ -316,14 +316,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1119b84d-fc58-4e1d-8c2e-00ea86b3ff96",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5178),
+                            ConcurrencyStamp = "a10b9168-5b4f-423f-9774-c868b4b2805e",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3583),
                             Email = "jane.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4a3ad63e-b16d-4166-bc5b-964f2517f083",
+                            SecurityStamp = "183d1ad4-4b46-41a0-befa-177c33463645",
                             TwoFactorEnabled = false,
                             UserName = "jane doe"
                         },
@@ -331,14 +331,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a74ec944-263c-4078-a1cd-7ace482a352a",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5190),
+                            ConcurrencyStamp = "0639ae10-2f28-485e-9279-ab3be37016c3",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3611),
                             Email = "Sara.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9954a903-6e16-4e3c-9605-7066ec09dad6",
+                            SecurityStamp = "75a9edd3-b43b-4f4b-aad7-631e4efe3902",
                             TwoFactorEnabled = false,
                             UserName = "Sara doe"
                         },
@@ -346,14 +346,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f224ef67-b4bb-49da-9299-dc4e4d800c07",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5202),
+                            ConcurrencyStamp = "4f2281db-bb9e-4fda-b19e-42ecb43b408f",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3624),
                             Email = "Sandy.Jakson@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "da6308b6-6be1-4f1e-b95f-09b475e67393",
+                            SecurityStamp = "17ffedcc-b3d1-47fa-9635-88d3835e827c",
                             TwoFactorEnabled = false,
                             UserName = "Sandy Jakson"
                         });
@@ -508,8 +508,7 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Data.Entities.Order", "Order")
                         .WithMany("Products")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Order");
                 });

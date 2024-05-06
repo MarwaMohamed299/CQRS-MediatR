@@ -6546,3 +6546,2500 @@ dbug: 5/6/2024 19:51:37.147 RelationalEventId.ConnectionDisposing[20007] (Micros
       Disposing connection to database 'ECommerceSystem' on server '.'.
 dbug: 5/6/2024 19:51:37.147 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
       Disposed connection to database '' on server '' (0ms).
+dbug: 5/6/2024 19:55:40.491 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 19:55:40.599 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Order>()
+          .FirstOrDefault(e => EF.Property<int>(e, "Id") == __p_0)'
+dbug: 5/6/2024 19:55:40.721 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Order>(
+          asyncEnumerable: new SingleQueryingEnumerable<Order>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Order.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Order.ConfirmedAt (DateTime?), 1], [Property: Order.CreatedAt (DateTime) Required, 2], [Property: Order.UpdatedAt (DateTime?), 3], [Property: Order.UserId (string) Required FK Index, 4] }
+                  SELECT TOP(1) o.Id, o.ConfirmedAt, o.CreatedAt, o.UpdatedAt, o.UserId
+                  FROM Orders AS o
+                  WHERE o.Id == @__p_0), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Order>, 
+              Domain.Data.Context.ECommerceContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: 5/6/2024 19:55:40.734 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 19:55:40.736 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (1ms).
+dbug: 5/6/2024 19:55:40.737 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 19:55:40.787 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 19:55:40.788 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 19:55:40.789 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 19:55:40.791 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (3ms).
+dbug: 5/6/2024 19:55:40.792 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__p_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+info: 5/6/2024 19:55:40.804 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (13ms) [Parameters=[@__p_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+dbug: 5/6/2024 19:55:40.825 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'ECommerceContext' started tracking 'Order' entity with key '{Id: 14}'.
+dbug: 5/6/2024 19:55:40.875 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 19:55:40.875 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 69ms reading results.
+dbug: 5/6/2024 19:55:40.876 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 19:55:40.877 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 19:55:40.914 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'Order' entity with key '{Id: 14}' tracked by 'ECommerceContext' changed state from 'Unchanged' to 'Deleted'.
+dbug: 5/6/2024 19:55:40.953 CoreEventId.SaveChangesStarting[10004] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 19:55:40.961 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 19:55:40.994 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'ECommerceContext'.
+dbug: 5/6/2024 19:55:41.191 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 19:55:41.192 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 19:55:41.200 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 19:55:41.201 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 19:55:41.202 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 19:55:41.203 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='14'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+info: 5/6/2024 19:55:41.240 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (36ms) [Parameters=[@p0='14'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+dbug: 5/6/2024 19:55:41.277 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 19:55:41.279 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 37ms reading results.
+dbug: 5/6/2024 19:55:41.284 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 19:55:41.285 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+fail: 5/6/2024 19:55:41.428 CoreEventId.SaveChangesFailed[10000] (Microsoft.EntityFrameworkCore.Update) 
+      An exception occurred in the database while saving changes for context type 'Domain.Data.Context.ECommerceContext'.
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+       ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Products_Orders_OrderId". The conflict occurred in database "ECommerceSystem", table "dbo.Products", column 'OrderId'.
+         at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+         at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+         at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+         at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+         at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+         at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+      --- End of stack trace from previous location ---
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+      ClientConnectionId:b18b8cd0-d770-44ba-b04f-609de24c4675
+      Error Number:547,State:0,Class:16
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+dbug: 5/6/2024 19:55:41.604 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 19:55:41.607 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 19:55:41.608 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (0ms).
+warn: 5/6/2024 20:00:15.782 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:00:16.081 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:00:17.506 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+warn: 5/6/2024 20:00:34.163 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:00:34.464 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:00:34.491 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:00:34.570 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (77ms).
+dbug: 5/6/2024 20:00:34.573 RelationalEventId.MigrateUsingConnection[20400] (Microsoft.EntityFrameworkCore.Migrations) 
+      Migrating using database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:34.584 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:34.916 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:34.922 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:00:34.928 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (5ms).
+dbug: 5/6/2024 20:00:34.932 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (10ms).
+dbug: 5/6/2024 20:00:34.937 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: 5/6/2024 20:00:34.971 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+dbug: 5/6/2024 20:00:34.975 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:34.982 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (5ms).
+dbug: 5/6/2024 20:00:34.986 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 5/6/2024 20:00:34.987 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (0ms).
+dbug: 5/6/2024 20:00:34.987 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (1ms).
+dbug: 5/6/2024 20:00:34.988 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:34.990 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:34.992 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: 5/6/2024 20:00:35.018 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+dbug: 5/6/2024 20:00:35.019 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.020 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (1ms).
+dbug: 5/6/2024 20:00:35.023 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.024 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.025 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:00:35.026 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:00:35.026 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:00:35.027 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: 5/6/2024 20:00:35.029 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+dbug: 5/6/2024 20:00:35.030 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.030 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:00:35.031 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 5/6/2024 20:00:35.032 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (0ms).
+dbug: 5/6/2024 20:00:35.033 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (1ms).
+dbug: 5/6/2024 20:00:35.033 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.034 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.035 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: 5/6/2024 20:00:35.037 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+dbug: 5/6/2024 20:00:35.037 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.038 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:00:35.055 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.056 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.057 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:00:35.057 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:00:35.058 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:00:35.059 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: 5/6/2024 20:00:35.088 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+dbug: 5/6/2024 20:00:35.092 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.094 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 3ms reading results.
+dbug: 5/6/2024 20:00:35.095 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.096 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+info: 5/6/2024 20:00:35.111 RelationalEventId.MigrationApplying[20402] (Microsoft.EntityFrameworkCore.Migrations) 
+      Applying migration '20240506170017_changingFK'.
+dbug: 5/6/2024 20:00:35.174 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.176 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.181 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: 5/6/2024 20:00:35.192 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'ReadCommitted'.
+dbug: 5/6/2024 20:00:35.194 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:00:35.194 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:00:35.196 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:00:35.197 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DECLARE @var0 sysname;
+      SELECT @var0 = [d].[name]
+      FROM [sys].[default_constraints] [d]
+      INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+      WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Products]') AND [c].[name] = N'OrderId');
+      IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Products] DROP CONSTRAINT [' + @var0 + '];');
+      ALTER TABLE [Products] ALTER COLUMN [OrderId] int NULL;
+info: 5/6/2024 20:00:35.525 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (328ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      DECLARE @var0 sysname;
+      SELECT @var0 = [d].[name]
+      FROM [sys].[default_constraints] [d]
+      INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+      WHERE ([d].[parent_object_id] = OBJECT_ID(N'[Products]') AND [c].[name] = N'OrderId');
+      IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [Products] DROP CONSTRAINT [' + @var0 + '];');
+      ALTER TABLE [Products] ALTER COLUMN [OrderId] int NULL;
+dbug: 5/6/2024 20:00:35.526 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:00:35.527 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:00:35.529 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:00:35.529 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'36e78f7c-c9ad-4947-bb01-13d84bf4041d', [CreationDate] = '2024-05-06T20:00:16.1472001+03:00', [SecurityStamp] = N'd1591be6-d818-4bdd-ab7b-68574c7b1195'
+      WHERE [Id] = N'4';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:00:35.565 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'36e78f7c-c9ad-4947-bb01-13d84bf4041d', [CreationDate] = '2024-05-06T20:00:16.1472001+03:00', [SecurityStamp] = N'd1591be6-d818-4bdd-ab7b-68574c7b1195'
+      WHERE [Id] = N'4';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:00:35.565 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:00:35.566 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:00:35.567 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:00:35.568 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'01fcf2ff-ddb7-4aa1-9749-39af792e2304', [CreationDate] = '2024-05-06T20:00:16.1472072+03:00', [SecurityStamp] = N'c2ba3c3b-dad7-4980-a093-3427b81d69be'
+      WHERE [Id] = N'5';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:00:35.571 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'01fcf2ff-ddb7-4aa1-9749-39af792e2304', [CreationDate] = '2024-05-06T20:00:16.1472072+03:00', [SecurityStamp] = N'c2ba3c3b-dad7-4980-a093-3427b81d69be'
+      WHERE [Id] = N'5';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:00:35.571 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:00:35.572 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:00:35.573 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:00:35.574 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'fb3093a0-5650-45fb-bb5e-3c27ad40529a', [CreationDate] = '2024-05-06T20:00:16.1472080+03:00', [SecurityStamp] = N'a192290d-9585-478e-82cb-7d8e66150a4c'
+      WHERE [Id] = N'6';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:00:35.577 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'fb3093a0-5650-45fb-bb5e-3c27ad40529a', [CreationDate] = '2024-05-06T20:00:16.1472080+03:00', [SecurityStamp] = N'a192290d-9585-478e-82cb-7d8e66150a4c'
+      WHERE [Id] = N'6';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:00:35.578 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:00:35.578 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:00:35.579 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:00:35.580 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'd3dff488-8766-43bc-8f8f-c6379887e547', [CreationDate] = '2024-05-06T20:00:16.1472089+03:00', [SecurityStamp] = N'cec2f263-1b9a-4310-be1b-ee0a9ca3acd7'
+      WHERE [Id] = N'7';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:00:35.825 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'd3dff488-8766-43bc-8f8f-c6379887e547', [CreationDate] = '2024-05-06T20:00:16.1472089+03:00', [SecurityStamp] = N'cec2f263-1b9a-4310-be1b-ee0a9ca3acd7'
+      WHERE [Id] = N'7';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:00:35.826 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:00:35.826 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:00:35.827 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:00:35.828 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'81ca965f-4057-439e-a321-783db35ddc20', [CreationDate] = '2024-05-06T20:00:16.1472106+03:00', [SecurityStamp] = N'4d028ed7-a524-4c74-b773-3b98a253b71c'
+      WHERE [Id] = N'8';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:00:35.837 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'81ca965f-4057-439e-a321-783db35ddc20', [CreationDate] = '2024-05-06T20:00:16.1472106+03:00', [SecurityStamp] = N'4d028ed7-a524-4c74-b773-3b98a253b71c'
+      WHERE [Id] = N'8';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:00:35.838 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:00:35.839 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:00:35.842 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (3ms).
+dbug: 5/6/2024 20:00:35.842 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+      VALUES (N'20240506170017_changingFK', N'8.0.4');
+info: 5/6/2024 20:00:35.846 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+      VALUES (N'20240506170017_changingFK', N'8.0.4');
+dbug: 5/6/2024 20:00:35.849 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+dbug: 5/6/2024 20:00:35.859 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+dbug: 5/6/2024 20:00:35.862 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+dbug: 5/6/2024 20:00:35.863 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.864 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:00:35.867 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:00:35.871 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:00:35.873 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (2ms).
+warn: 5/6/2024 20:01:55.045 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:01:55.617 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:01:55.825 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Order>()
+          .FirstOrDefault(e => EF.Property<int>(e, "Id") == __p_0)'
+dbug: 5/6/2024 20:01:56.294 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Order>(
+          asyncEnumerable: new SingleQueryingEnumerable<Order>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Order.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Order.ConfirmedAt (DateTime?), 1], [Property: Order.CreatedAt (DateTime) Required, 2], [Property: Order.UpdatedAt (DateTime?), 3], [Property: Order.UserId (string) Required FK Index, 4] }
+                  SELECT TOP(1) o.Id, o.ConfirmedAt, o.CreatedAt, o.UpdatedAt, o.UserId
+                  FROM Orders AS o
+                  WHERE o.Id == @__p_0), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Order>, 
+              Domain.Data.Context.ECommerceContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: 5/6/2024 20:01:56.368 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:01:56.432 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (58ms).
+dbug: 5/6/2024 20:01:56.442 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:01:56.913 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:01:56.924 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:01:56.934 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (9ms).
+dbug: 5/6/2024 20:01:56.953 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (31ms).
+dbug: 5/6/2024 20:01:56.974 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__p_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+info: 5/6/2024 20:01:57.111 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (137ms) [Parameters=[@__p_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+dbug: 5/6/2024 20:01:57.204 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'ECommerceContext' started tracking 'Order' entity with key '{Id: 14}'.
+dbug: 5/6/2024 20:01:57.296 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:01:57.310 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 190ms reading results.
+dbug: 5/6/2024 20:01:57.317 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:01:57.330 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (12ms).
+dbug: 5/6/2024 20:01:57.353 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'Order' entity with key '{Id: 14}' tracked by 'ECommerceContext' changed state from 'Unchanged' to 'Deleted'.
+dbug: 5/6/2024 20:01:57.380 CoreEventId.SaveChangesStarting[10004] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:01:57.387 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:01:57.430 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'ECommerceContext'.
+dbug: 5/6/2024 20:01:57.598 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:01:57.600 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:01:57.604 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:01:57.605 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:01:57.606 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:01:57.608 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='14'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+info: 5/6/2024 20:01:57.642 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (34ms) [Parameters=[@p0='14'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+dbug: 5/6/2024 20:01:57.660 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:01:57.661 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 18ms reading results.
+dbug: 5/6/2024 20:01:57.665 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:01:57.666 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (1ms).
+fail: 5/6/2024 20:01:57.766 CoreEventId.SaveChangesFailed[10000] (Microsoft.EntityFrameworkCore.Update) 
+      An exception occurred in the database while saving changes for context type 'Domain.Data.Context.ECommerceContext'.
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+       ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Products_Orders_OrderId". The conflict occurred in database "ECommerceSystem", table "dbo.Products", column 'OrderId'.
+         at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+         at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+         at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+         at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+         at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+         at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+      --- End of stack trace from previous location ---
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+      ClientConnectionId:c6a50ccb-6e10-42bc-ab51-75ad11a79ff1
+      Error Number:547,State:0,Class:16
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+dbug: 5/6/2024 20:01:57.864 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:01:57.876 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:01:57.879 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (5ms).
+warn: 5/6/2024 20:02:49.814 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:02:50.443 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:02:50.618 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Order>()
+          .FirstOrDefault(e => EF.Property<int>(e, "Id") == __p_0)'
+dbug: 5/6/2024 20:02:51.122 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Order>(
+          asyncEnumerable: new SingleQueryingEnumerable<Order>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Order.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Order.ConfirmedAt (DateTime?), 1], [Property: Order.CreatedAt (DateTime) Required, 2], [Property: Order.UpdatedAt (DateTime?), 3], [Property: Order.UserId (string) Required FK Index, 4] }
+                  SELECT TOP(1) o.Id, o.ConfirmedAt, o.CreatedAt, o.UpdatedAt, o.UserId
+                  FROM Orders AS o
+                  WHERE o.Id == @__p_0), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Order>, 
+              Domain.Data.Context.ECommerceContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: 5/6/2024 20:02:51.212 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:02:51.264 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (43ms).
+dbug: 5/6/2024 20:02:51.274 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:02:51.628 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:02:51.634 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:02:51.646 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (7ms).
+dbug: 5/6/2024 20:02:51.661 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (28ms).
+dbug: 5/6/2024 20:02:51.679 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__p_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+info: 5/6/2024 20:02:51.800 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (115ms) [Parameters=[@__p_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+dbug: 5/6/2024 20:02:51.882 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'ECommerceContext' started tracking 'Order' entity with key '{Id: 14}'.
+dbug: 5/6/2024 20:02:51.944 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:02:51.956 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 146ms reading results.
+dbug: 5/6/2024 20:02:51.963 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:02:51.976 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (12ms).
+dbug: 5/6/2024 20:02:51.999 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'Order' entity with key '{Id: 14}' tracked by 'ECommerceContext' changed state from 'Unchanged' to 'Deleted'.
+dbug: 5/6/2024 20:02:52.026 CoreEventId.SaveChangesStarting[10004] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:02:52.033 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:02:52.071 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'ECommerceContext'.
+dbug: 5/6/2024 20:02:52.221 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:02:52.226 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:02:52.230 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:02:52.231 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:02:52.232 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:02:52.232 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='14'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+info: 5/6/2024 20:02:52.272 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (39ms) [Parameters=[@p0='14'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+dbug: 5/6/2024 20:02:52.293 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:02:52.295 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 17ms reading results.
+dbug: 5/6/2024 20:02:52.298 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:02:52.300 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (1ms).
+fail: 5/6/2024 20:02:52.363 CoreEventId.SaveChangesFailed[10000] (Microsoft.EntityFrameworkCore.Update) 
+      An exception occurred in the database while saving changes for context type 'Domain.Data.Context.ECommerceContext'.
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+       ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Products_Orders_OrderId". The conflict occurred in database "ECommerceSystem", table "dbo.Products", column 'OrderId'.
+         at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+         at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+         at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+         at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+         at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+         at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+      --- End of stack trace from previous location ---
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+      ClientConnectionId:9b61fed9-f203-429e-9027-0d521b2feeb5
+      Error Number:547,State:0,Class:16
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+dbug: 5/6/2024 20:02:52.401 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:02:52.416 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:02:52.419 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (3ms).
+warn: 5/6/2024 20:05:43.327 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:05:43.746 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:05:45.074 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:05:45.130 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (52ms).
+dbug: 5/6/2024 20:05:45.136 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.453 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.459 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:05:45.466 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (5ms).
+dbug: 5/6/2024 20:05:45.469 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (11ms).
+dbug: 5/6/2024 20:05:45.476 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: 5/6/2024 20:05:45.511 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+dbug: 5/6/2024 20:05:45.514 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.523 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (6ms).
+dbug: 5/6/2024 20:05:45.529 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 5/6/2024 20:05:45.531 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (2ms).
+dbug: 5/6/2024 20:05:45.532 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (3ms).
+dbug: 5/6/2024 20:05:45.533 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.536 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.537 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: 5/6/2024 20:05:45.569 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+dbug: 5/6/2024 20:05:45.571 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.572 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (1ms).
+dbug: 5/6/2024 20:05:45.586 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.593 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.594 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:05:45.595 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:05:45.595 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:05:45.596 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: 5/6/2024 20:05:45.614 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (18ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+dbug: 5/6/2024 20:05:45.618 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.620 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 3ms reading results.
+dbug: 5/6/2024 20:05:45.627 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.628 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:05:45.631 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:05:45.635 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:05:45.639 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (2ms).
+warn: 5/6/2024 20:06:18.500 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:06:18.847 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:06:19.893 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:06:19.955 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (61ms).
+dbug: 5/6/2024 20:06:19.961 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.174 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.183 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:06:20.191 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (6ms).
+dbug: 5/6/2024 20:06:20.194 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (12ms).
+dbug: 5/6/2024 20:06:20.203 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: 5/6/2024 20:06:20.239 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+dbug: 5/6/2024 20:06:20.243 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.251 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (6ms).
+dbug: 5/6/2024 20:06:20.255 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 5/6/2024 20:06:20.256 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (0ms).
+dbug: 5/6/2024 20:06:20.258 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (3ms).
+dbug: 5/6/2024 20:06:20.260 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.262 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.263 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: 5/6/2024 20:06:20.280 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+dbug: 5/6/2024 20:06:20.281 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.283 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (2ms).
+dbug: 5/6/2024 20:06:20.296 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.297 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.298 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:06:20.299 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:06:20.300 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:06:20.301 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: 5/6/2024 20:06:20.308 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+dbug: 5/6/2024 20:06:20.313 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.315 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 4ms reading results.
+dbug: 5/6/2024 20:06:20.317 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.317 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:06:20.320 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:06:20.324 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:06:20.327 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (2ms).
+warn: 5/6/2024 20:06:57.652 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:06:57.982 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:06:59.247 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+warn: 5/6/2024 20:07:16.410 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:07:16.800 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:07:16.826 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:07:16.886 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (57ms).
+dbug: 5/6/2024 20:07:16.889 RelationalEventId.MigrateUsingConnection[20400] (Microsoft.EntityFrameworkCore.Migrations) 
+      Migrating using database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:16.898 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.123 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.132 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:17.138 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (5ms).
+dbug: 5/6/2024 20:07:17.141 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (10ms).
+dbug: 5/6/2024 20:07:17.151 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: 5/6/2024 20:07:17.186 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+dbug: 5/6/2024 20:07:17.189 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.201 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (9ms).
+dbug: 5/6/2024 20:07:17.206 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 5/6/2024 20:07:17.207 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (0ms).
+dbug: 5/6/2024 20:07:17.210 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (4ms).
+dbug: 5/6/2024 20:07:17.211 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.214 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.215 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: 5/6/2024 20:07:17.247 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+dbug: 5/6/2024 20:07:17.248 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.250 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (1ms).
+dbug: 5/6/2024 20:07:17.253 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.255 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.261 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:17.261 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:07:17.262 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:07:17.263 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: 5/6/2024 20:07:17.266 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+dbug: 5/6/2024 20:07:17.267 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.268 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:07:17.269 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 5/6/2024 20:07:17.269 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (0ms).
+dbug: 5/6/2024 20:07:17.270 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (1ms).
+dbug: 5/6/2024 20:07:17.270 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.271 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.271 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: 5/6/2024 20:07:17.274 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+dbug: 5/6/2024 20:07:17.275 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.278 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (3ms).
+dbug: 5/6/2024 20:07:17.295 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.296 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.297 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:07:17.297 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:07:17.298 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:07:17.299 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: 5/6/2024 20:07:17.313 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+dbug: 5/6/2024 20:07:17.317 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.320 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 3ms reading results.
+dbug: 5/6/2024 20:07:17.321 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.321 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+info: 5/6/2024 20:07:17.347 RelationalEventId.MigrationApplying[20402] (Microsoft.EntityFrameworkCore.Migrations) 
+      Applying migration '20240506170659_ChangingFK2'.
+dbug: 5/6/2024 20:07:17.452 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.453 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:17.457 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: 5/6/2024 20:07:17.476 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'ReadCommitted'.
+dbug: 5/6/2024 20:07:17.486 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:17.487 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:07:17.489 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:07:17.490 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE [Products] DROP CONSTRAINT [FK_Products_Orders_OrderId];
+info: 5/6/2024 20:07:17.615 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (125ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE [Products] DROP CONSTRAINT [FK_Products_Orders_OrderId];
+dbug: 5/6/2024 20:07:17.617 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:17.618 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:07:17.619 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:07:17.620 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'4a42f46e-d97e-4476-83d4-85347db79a8c', [CreationDate] = '2024-05-06T20:06:58.0505007+03:00', [SecurityStamp] = N'184ce316-c554-458a-a98c-ce162f2741ac'
+      WHERE [Id] = N'4';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:07:17.779 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (159ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'4a42f46e-d97e-4476-83d4-85347db79a8c', [CreationDate] = '2024-05-06T20:06:58.0505007+03:00', [SecurityStamp] = N'184ce316-c554-458a-a98c-ce162f2741ac'
+      WHERE [Id] = N'4';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:07:17.780 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:17.781 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:07:17.783 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:07:17.784 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'39490bc4-bafc-4fac-a1fd-b1d947e5ec3e', [CreationDate] = '2024-05-06T20:06:58.0505092+03:00', [SecurityStamp] = N'06d441fa-51a5-4359-993d-ba71be7ad936'
+      WHERE [Id] = N'5';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:07:17.787 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'39490bc4-bafc-4fac-a1fd-b1d947e5ec3e', [CreationDate] = '2024-05-06T20:06:58.0505092+03:00', [SecurityStamp] = N'06d441fa-51a5-4359-993d-ba71be7ad936'
+      WHERE [Id] = N'5';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:07:17.788 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:17.788 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:07:17.789 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:07:17.791 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'fd245dfa-5954-49e4-a8a9-cfe1fe16d0f7', [CreationDate] = '2024-05-06T20:06:58.0505102+03:00', [SecurityStamp] = N'90ddc092-fb90-4415-ac0c-2dd267706a0a'
+      WHERE [Id] = N'6';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:07:17.796 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'fd245dfa-5954-49e4-a8a9-cfe1fe16d0f7', [CreationDate] = '2024-05-06T20:06:58.0505102+03:00', [SecurityStamp] = N'90ddc092-fb90-4415-ac0c-2dd267706a0a'
+      WHERE [Id] = N'6';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:07:17.797 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:17.799 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:07:17.800 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:07:17.801 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'5079e9b3-0ccf-40da-9dc8-32a9feaa8f9a', [CreationDate] = '2024-05-06T20:06:58.0505116+03:00', [SecurityStamp] = N'8f354427-e225-4d34-9237-554ea3520d46'
+      WHERE [Id] = N'7';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:07:17.805 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'5079e9b3-0ccf-40da-9dc8-32a9feaa8f9a', [CreationDate] = '2024-05-06T20:06:58.0505116+03:00', [SecurityStamp] = N'8f354427-e225-4d34-9237-554ea3520d46'
+      WHERE [Id] = N'7';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:07:17.807 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:17.808 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:07:17.810 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (3ms).
+dbug: 5/6/2024 20:07:17.811 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'0d34efce-ba34-4e93-913b-65bdb8dd885d', [CreationDate] = '2024-05-06T20:06:58.0505125+03:00', [SecurityStamp] = N'e9dda2b9-0a0a-49a6-aa5e-09250e483f33'
+      WHERE [Id] = N'8';
+      SELECT @@ROWCOUNT;
+info: 5/6/2024 20:07:18.047 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      UPDATE [AspNetUsers] SET [ConcurrencyStamp] = N'0d34efce-ba34-4e93-913b-65bdb8dd885d', [CreationDate] = '2024-05-06T20:06:58.0505125+03:00', [SecurityStamp] = N'e9dda2b9-0a0a-49a6-aa5e-09250e483f33'
+      WHERE [Id] = N'8';
+      SELECT @@ROWCOUNT;
+dbug: 5/6/2024 20:07:18.048 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:18.049 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:07:18.052 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (3ms).
+dbug: 5/6/2024 20:07:18.053 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE [Products] ADD CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION;
+info: 5/6/2024 20:07:18.119 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (66ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE [Products] ADD CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION;
+dbug: 5/6/2024 20:07:18.120 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:07:18.121 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:07:18.122 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:07:18.122 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+      VALUES (N'20240506170659_ChangingFK2', N'8.0.4');
+info: 5/6/2024 20:07:18.132 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+      VALUES (N'20240506170659_ChangingFK2', N'8.0.4');
+dbug: 5/6/2024 20:07:18.135 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+dbug: 5/6/2024 20:07:18.141 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+dbug: 5/6/2024 20:07:18.144 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+dbug: 5/6/2024 20:07:18.145 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:18.148 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (2ms).
+dbug: 5/6/2024 20:07:18.151 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:07:18.155 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:18.158 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (2ms).
+warn: 5/6/2024 20:07:47.905 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:07:48.279 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:07:48.448 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Order>()
+          .FirstOrDefault(e => EF.Property<int>(e, "Id") == __p_0)'
+dbug: 5/6/2024 20:07:48.748 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Order>(
+          asyncEnumerable: new SingleQueryingEnumerable<Order>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Order.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Order.ConfirmedAt (DateTime?), 1], [Property: Order.CreatedAt (DateTime) Required, 2], [Property: Order.UpdatedAt (DateTime?), 3], [Property: Order.UserId (string) Required FK Index, 4] }
+                  SELECT TOP(1) o.Id, o.ConfirmedAt, o.CreatedAt, o.UpdatedAt, o.UserId
+                  FROM Orders AS o
+                  WHERE o.Id == @__p_0), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Order>, 
+              Domain.Data.Context.ECommerceContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: 5/6/2024 20:07:48.798 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:07:48.836 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (40ms).
+dbug: 5/6/2024 20:07:48.841 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:49.212 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:49.218 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:07:49.227 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (6ms).
+dbug: 5/6/2024 20:07:49.238 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (21ms).
+dbug: 5/6/2024 20:07:49.248 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__p_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+info: 5/6/2024 20:07:49.324 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (73ms) [Parameters=[@__p_0='14'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+dbug: 5/6/2024 20:07:49.382 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'ECommerceContext' started tracking 'Order' entity with key '{Id: 14}'.
+dbug: 5/6/2024 20:07:49.428 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:49.437 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 106ms reading results.
+dbug: 5/6/2024 20:07:49.443 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:49.450 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (8ms).
+dbug: 5/6/2024 20:07:49.465 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'Order' entity with key '{Id: 14}' tracked by 'ECommerceContext' changed state from 'Unchanged' to 'Deleted'.
+dbug: 5/6/2024 20:07:49.480 CoreEventId.SaveChangesStarting[10004] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:07:49.483 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:07:49.506 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'ECommerceContext'.
+dbug: 5/6/2024 20:07:49.609 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:49.612 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:49.617 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:07:49.618 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:07:49.618 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:07:49.619 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='14'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+info: 5/6/2024 20:07:49.644 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (25ms) [Parameters=[@p0='14'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+dbug: 5/6/2024 20:07:49.656 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:49.657 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 11ms reading results.
+dbug: 5/6/2024 20:07:49.661 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:49.662 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+fail: 5/6/2024 20:07:49.735 CoreEventId.SaveChangesFailed[10000] (Microsoft.EntityFrameworkCore.Update) 
+      An exception occurred in the database while saving changes for context type 'Domain.Data.Context.ECommerceContext'.
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+       ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Products_Orders_OrderId". The conflict occurred in database "ECommerceSystem", table "dbo.Products", column 'OrderId'.
+         at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+         at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+         at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+         at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+         at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+         at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+         at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+      --- End of stack trace from previous location ---
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+      ClientConnectionId:a8503215-0528-40b7-9c7f-d5f42d7532df
+      Error Number:547,State:0,Class:16
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+dbug: 5/6/2024 20:07:49.800 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:07:49.806 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:07:49.812 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (5ms).
+warn: 5/6/2024 20:12:50.763 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:12:51.110 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:12:52.737 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+warn: 5/6/2024 20:13:06.965 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:13:07.389 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:13:07.443 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:13:07.593 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (147ms).
+dbug: 5/6/2024 20:13:07.596 RelationalEventId.MigrateUsingConnection[20400] (Microsoft.EntityFrameworkCore.Migrations) 
+      Migrating using database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:07.616 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:08.013 RelationalEventId.ConnectionError[20004] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      An error occurred using the connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:08.014 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:08.017 RelationalEventId.ConnectionError[20004] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      An error occurred using the connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:08.185 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:13:08.186 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (1ms).
+dbug: 5/6/2024 20:13:08.187 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'master' on server '.'.
+dbug: 5/6/2024 20:13:08.212 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'master' on server '.'.
+dbug: 5/6/2024 20:13:08.220 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:08.228 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (7ms).
+dbug: 5/6/2024 20:13:08.232 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (13ms).
+dbug: 5/6/2024 20:13:08.239 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+      CREATE DATABASE [ECommerceSystem];
+info: 5/6/2024 20:13:08.853 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (607ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+      CREATE DATABASE [ECommerceSystem];
+dbug: 5/6/2024 20:13:08.856 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:08.857 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:08.858 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:08.858 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='60']
+      IF SERVERPROPERTY('EngineEdition') <> 5
+      BEGIN
+          ALTER DATABASE [ECommerceSystem] SET READ_COMMITTED_SNAPSHOT ON;
+      END;
+info: 5/6/2024 20:13:08.997 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (139ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+      IF SERVERPROPERTY('EngineEdition') <> 5
+      BEGIN
+          ALTER DATABASE [ECommerceSystem] SET READ_COMMITTED_SNAPSHOT ON;
+      END;
+dbug: 5/6/2024 20:13:09.000 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'master' on server '.'.
+dbug: 5/6/2024 20:13:09.009 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'master' on server '.' (7ms).
+dbug: 5/6/2024 20:13:09.013 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'master' on server '.'.
+dbug: 5/6/2024 20:13:09.015 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (1ms).
+dbug: 5/6/2024 20:13:09.016 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.022 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.023 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:09.024 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:09.024 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:09.028 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: 5/6/2024 20:13:09.039 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+dbug: 5/6/2024 20:13:09.041 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.045 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (3ms).
+dbug: 5/6/2024 20:13:09.140 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:09.141 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:09.143 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:09.144 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.146 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.147 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [__EFMigrationsHistory] (
+          [MigrationId] nvarchar(150) NOT NULL,
+          [ProductVersion] nvarchar(32) NOT NULL,
+          CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+      );
+info: 5/6/2024 20:13:09.164 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [__EFMigrationsHistory] (
+          [MigrationId] nvarchar(150) NOT NULL,
+          [ProductVersion] nvarchar(32) NOT NULL,
+          CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+      );
+dbug: 5/6/2024 20:13:09.166 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.168 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (2ms).
+dbug: 5/6/2024 20:13:09.170 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.171 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.173 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:09.174 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:09.175 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:09.178 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+info: 5/6/2024 20:13:09.186 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT 1
+dbug: 5/6/2024 20:13:09.186 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.187 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:13:09.191 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+dbug: 5/6/2024 20:13:09.191 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (0ms).
+dbug: 5/6/2024 20:13:09.192 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (1ms).
+dbug: 5/6/2024 20:13:09.193 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.194 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.195 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+info: 5/6/2024 20:13:09.216 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+dbug: 5/6/2024 20:13:09.217 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.219 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (2ms).
+dbug: 5/6/2024 20:13:09.222 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.223 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.223 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:13:09.224 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:13:09.231 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (7ms).
+dbug: 5/6/2024 20:13:09.232 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+info: 5/6/2024 20:13:09.248 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [MigrationId], [ProductVersion]
+      FROM [__EFMigrationsHistory]
+      ORDER BY [MigrationId];
+dbug: 5/6/2024 20:13:09.252 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.254 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 3ms reading results.
+dbug: 5/6/2024 20:13:09.255 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.256 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+info: 5/6/2024 20:13:09.275 RelationalEventId.MigrationApplying[20402] (Microsoft.EntityFrameworkCore.Migrations) 
+      Applying migration '20240506171252_Initial'.
+dbug: 5/6/2024 20:13:09.389 RelationalEventId.BatchReadyForExecution[20700] (Microsoft.EntityFrameworkCore.Update) 
+      Executing 5 update commands as a batch.
+dbug: 5/6/2024 20:13:09.401 RelationalEventId.BatchReadyForExecution[20700] (Microsoft.EntityFrameworkCore.Update) 
+      Executing 5 update commands as a batch.
+dbug: 5/6/2024 20:13:09.402 RelationalEventId.BatchReadyForExecution[20700] (Microsoft.EntityFrameworkCore.Update) 
+      Executing 8 update commands as a batch.
+dbug: 5/6/2024 20:13:09.412 RelationalEventId.BatchReadyForExecution[20700] (Microsoft.EntityFrameworkCore.Update) 
+      Executing 5 update commands as a batch.
+dbug: 5/6/2024 20:13:09.420 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.429 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:09.439 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: 5/6/2024 20:13:09.451 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'ReadCommitted'.
+dbug: 5/6/2024 20:13:09.452 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:09.453 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:09.455 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:09.461 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetRoles] (
+          [Id] nvarchar(450) NOT NULL,
+          [Name] nvarchar(256) NULL,
+          [NormalizedName] nvarchar(256) NULL,
+          [ConcurrencyStamp] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+      );
+info: 5/6/2024 20:13:09.478 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetRoles] (
+          [Id] nvarchar(450) NOT NULL,
+          [Name] nvarchar(256) NULL,
+          [NormalizedName] nvarchar(256) NULL,
+          [ConcurrencyStamp] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+      );
+dbug: 5/6/2024 20:13:09.479 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:09.480 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:09.481 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:09.481 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUsers] (
+          [Id] nvarchar(450) NOT NULL,
+          [CreationDate] datetime2 NOT NULL,
+          [UserName] nvarchar(256) NULL,
+          [NormalizedUserName] nvarchar(256) NULL,
+          [Email] nvarchar(256) NULL,
+          [NormalizedEmail] nvarchar(256) NULL,
+          [EmailConfirmed] bit NOT NULL,
+          [PasswordHash] nvarchar(max) NULL,
+          [SecurityStamp] nvarchar(max) NULL,
+          [ConcurrencyStamp] nvarchar(max) NULL,
+          [PhoneNumber] nvarchar(max) NULL,
+          [PhoneNumberConfirmed] bit NOT NULL,
+          [TwoFactorEnabled] bit NOT NULL,
+          [LockoutEnd] datetimeoffset NULL,
+          [LockoutEnabled] bit NOT NULL,
+          [AccessFailedCount] int NOT NULL,
+          CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+      );
+info: 5/6/2024 20:13:09.486 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUsers] (
+          [Id] nvarchar(450) NOT NULL,
+          [CreationDate] datetime2 NOT NULL,
+          [UserName] nvarchar(256) NULL,
+          [NormalizedUserName] nvarchar(256) NULL,
+          [Email] nvarchar(256) NULL,
+          [NormalizedEmail] nvarchar(256) NULL,
+          [EmailConfirmed] bit NOT NULL,
+          [PasswordHash] nvarchar(max) NULL,
+          [SecurityStamp] nvarchar(max) NULL,
+          [ConcurrencyStamp] nvarchar(max) NULL,
+          [PhoneNumber] nvarchar(max) NULL,
+          [PhoneNumberConfirmed] bit NOT NULL,
+          [TwoFactorEnabled] bit NOT NULL,
+          [LockoutEnd] datetimeoffset NULL,
+          [LockoutEnabled] bit NOT NULL,
+          [AccessFailedCount] int NOT NULL,
+          CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+      );
+dbug: 5/6/2024 20:13:09.487 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:09.488 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:09.488 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:09.489 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [ShippingCompanies] (
+          [Id] int NOT NULL IDENTITY,
+          [Name] nvarchar(max) NOT NULL,
+          CONSTRAINT [PK_ShippingCompanies] PRIMARY KEY ([Id])
+      );
+info: 5/6/2024 20:13:09.494 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [ShippingCompanies] (
+          [Id] int NOT NULL IDENTITY,
+          [Name] nvarchar(max) NOT NULL,
+          CONSTRAINT [PK_ShippingCompanies] PRIMARY KEY ([Id])
+      );
+dbug: 5/6/2024 20:13:09.495 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:09.495 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:09.496 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:09.496 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetRoleClaims] (
+          [Id] int NOT NULL IDENTITY,
+          [RoleId] nvarchar(450) NOT NULL,
+          [ClaimType] nvarchar(max) NULL,
+          [ClaimValue] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+      );
+info: 5/6/2024 20:13:10.214 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetRoleClaims] (
+          [Id] int NOT NULL IDENTITY,
+          [RoleId] nvarchar(450) NOT NULL,
+          [ClaimType] nvarchar(max) NULL,
+          [ClaimValue] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+      );
+dbug: 5/6/2024 20:13:10.216 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:10.217 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:10.217 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:10.219 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUserClaims] (
+          [Id] int NOT NULL IDENTITY,
+          [UserId] nvarchar(450) NOT NULL,
+          [ClaimType] nvarchar(max) NULL,
+          [ClaimValue] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+info: 5/6/2024 20:13:10.225 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUserClaims] (
+          [Id] int NOT NULL IDENTITY,
+          [UserId] nvarchar(450) NOT NULL,
+          [ClaimType] nvarchar(max) NULL,
+          [ClaimValue] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+dbug: 5/6/2024 20:13:10.227 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:10.229 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:10.229 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:10.230 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUserLogins] (
+          [LoginProvider] nvarchar(450) NOT NULL,
+          [ProviderKey] nvarchar(450) NOT NULL,
+          [ProviderDisplayName] nvarchar(max) NULL,
+          [UserId] nvarchar(450) NOT NULL,
+          CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+          CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+info: 5/6/2024 20:13:10.244 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUserLogins] (
+          [LoginProvider] nvarchar(450) NOT NULL,
+          [ProviderKey] nvarchar(450) NOT NULL,
+          [ProviderDisplayName] nvarchar(max) NULL,
+          [UserId] nvarchar(450) NOT NULL,
+          CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+          CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+dbug: 5/6/2024 20:13:10.245 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:10.246 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:10.247 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:10.249 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUserRoles] (
+          [UserId] nvarchar(450) NOT NULL,
+          [RoleId] nvarchar(450) NOT NULL,
+          CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+          CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+          CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+info: 5/6/2024 20:13:10.256 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUserRoles] (
+          [UserId] nvarchar(450) NOT NULL,
+          [RoleId] nvarchar(450) NOT NULL,
+          CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+          CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+          CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+dbug: 5/6/2024 20:13:10.257 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:10.257 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:10.258 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:10.260 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUserTokens] (
+          [UserId] nvarchar(450) NOT NULL,
+          [LoginProvider] nvarchar(450) NOT NULL,
+          [Name] nvarchar(450) NOT NULL,
+          [Value] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+          CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+info: 5/6/2024 20:13:12.106 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [AspNetUserTokens] (
+          [UserId] nvarchar(450) NOT NULL,
+          [LoginProvider] nvarchar(450) NOT NULL,
+          [Name] nvarchar(450) NOT NULL,
+          [Value] nvarchar(max) NULL,
+          CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+          CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+dbug: 5/6/2024 20:13:12.108 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:12.109 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:12.111 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (3ms).
+dbug: 5/6/2024 20:13:12.111 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [Orders] (
+          [Id] int NOT NULL IDENTITY,
+          [CreatedAt] datetime2 NOT NULL,
+          [UpdatedAt] datetime2 NULL,
+          [ConfirmedAt] datetime2 NULL,
+          [UserId] nvarchar(450) NOT NULL,
+          CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_Orders_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+info: 5/6/2024 20:13:12.122 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [Orders] (
+          [Id] int NOT NULL IDENTITY,
+          [CreatedAt] datetime2 NOT NULL,
+          [UpdatedAt] datetime2 NULL,
+          [ConfirmedAt] datetime2 NULL,
+          [UserId] nvarchar(450) NOT NULL,
+          CONSTRAINT [PK_Orders] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_Orders_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+      );
+dbug: 5/6/2024 20:13:12.123 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:12.124 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:12.125 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:12.125 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [Products] (
+          [Id] int NOT NULL IDENTITY,
+          [Name] nvarchar(max) NOT NULL,
+          [Price] decimal(18,2) NOT NULL,
+          [Quantity] int NOT NULL,
+          [OrderId] int NULL,
+          CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+      );
+info: 5/6/2024 20:13:12.130 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE TABLE [Products] (
+          [Id] int NOT NULL IDENTITY,
+          [Name] nvarchar(max) NOT NULL,
+          [Price] decimal(18,2) NOT NULL,
+          [Quantity] int NOT NULL,
+          [OrderId] int NULL,
+          CONSTRAINT [PK_Products] PRIMARY KEY ([Id]),
+          CONSTRAINT [FK_Products_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE NO ACTION
+      );
+dbug: 5/6/2024 20:13:12.131 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:12.132 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:12.132 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:12.133 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'ConcurrencyStamp', N'CreationDate', N'Email', N'EmailConfirmed', N'LockoutEnabled', N'LockoutEnd', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+          SET IDENTITY_INSERT [AspNetUsers] ON;
+      INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreationDate], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+      VALUES (N'4', 0, N'a7212f26-2cfc-4d95-b04f-a08ffb26038f', '2024-05-06T20:12:51.1623474+03:00', N'john.doe@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'eb3801f9-aecc-4e60-8e0e-844a9b68b434', CAST(0 AS bit), N'john doe'),
+      (N'5', 0, N'cfdb335e-efd9-4a04-a6c4-f529edca3fac', '2024-05-06T20:12:51.1623554+03:00', N'jane.doe@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'a60e1e8d-a594-4026-a528-25eb5df28b2e', CAST(0 AS bit), N'jane doe'),
+      (N'6', 0, N'a10b9168-5b4f-423f-9774-c868b4b2805e', '2024-05-06T20:12:51.1623583+03:00', N'jane.doe@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'183d1ad4-4b46-41a0-befa-177c33463645', CAST(0 AS bit), N'jane doe'),
+      (N'7', 0, N'0639ae10-2f28-485e-9279-ab3be37016c3', '2024-05-06T20:12:51.1623611+03:00', N'Sara.doe@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'75a9edd3-b43b-4f4b-aad7-631e4efe3902', CAST(0 AS bit), N'Sara doe'),
+      (N'8', 0, N'4f2281db-bb9e-4fda-b19e-42ecb43b408f', '2024-05-06T20:12:51.1623624+03:00', N'Sandy.Jakson@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'17ffedcc-b3d1-47fa-9635-88d3835e827c', CAST(0 AS bit), N'Sandy Jakson');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'ConcurrencyStamp', N'CreationDate', N'Email', N'EmailConfirmed', N'LockoutEnabled', N'LockoutEnd', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+          SET IDENTITY_INSERT [AspNetUsers] OFF;
+info: 5/6/2024 20:13:14.664 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (110ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'ConcurrencyStamp', N'CreationDate', N'Email', N'EmailConfirmed', N'LockoutEnabled', N'LockoutEnd', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+          SET IDENTITY_INSERT [AspNetUsers] ON;
+      INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [CreationDate], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+      VALUES (N'4', 0, N'a7212f26-2cfc-4d95-b04f-a08ffb26038f', '2024-05-06T20:12:51.1623474+03:00', N'john.doe@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'eb3801f9-aecc-4e60-8e0e-844a9b68b434', CAST(0 AS bit), N'john doe'),
+      (N'5', 0, N'cfdb335e-efd9-4a04-a6c4-f529edca3fac', '2024-05-06T20:12:51.1623554+03:00', N'jane.doe@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'a60e1e8d-a594-4026-a528-25eb5df28b2e', CAST(0 AS bit), N'jane doe'),
+      (N'6', 0, N'a10b9168-5b4f-423f-9774-c868b4b2805e', '2024-05-06T20:12:51.1623583+03:00', N'jane.doe@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'183d1ad4-4b46-41a0-befa-177c33463645', CAST(0 AS bit), N'jane doe'),
+      (N'7', 0, N'0639ae10-2f28-485e-9279-ab3be37016c3', '2024-05-06T20:12:51.1623611+03:00', N'Sara.doe@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'75a9edd3-b43b-4f4b-aad7-631e4efe3902', CAST(0 AS bit), N'Sara doe'),
+      (N'8', 0, N'4f2281db-bb9e-4fda-b19e-42ecb43b408f', '2024-05-06T20:12:51.1623624+03:00', N'Sandy.Jakson@example.com', CAST(0 AS bit), CAST(0 AS bit), NULL, NULL, NULL, N'password123', NULL, CAST(0 AS bit), N'17ffedcc-b3d1-47fa-9635-88d3835e827c', CAST(0 AS bit), N'Sandy Jakson');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'AccessFailedCount', N'ConcurrencyStamp', N'CreationDate', N'Email', N'EmailConfirmed', N'LockoutEnabled', N'LockoutEnd', N'NormalizedEmail', N'NormalizedUserName', N'PasswordHash', N'PhoneNumber', N'PhoneNumberConfirmed', N'SecurityStamp', N'TwoFactorEnabled', N'UserName') AND [object_id] = OBJECT_ID(N'[AspNetUsers]'))
+          SET IDENTITY_INSERT [AspNetUsers] OFF;
+dbug: 5/6/2024 20:13:14.665 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:14.666 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:14.667 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:14.667 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name') AND [object_id] = OBJECT_ID(N'[ShippingCompanies]'))
+          SET IDENTITY_INSERT [ShippingCompanies] ON;
+      INSERT INTO [ShippingCompanies] ([Id], [Name])
+      VALUES (1, N'Shipping Company 1'),
+      (2, N'Shipping Company 2'),
+      (3, N'Shipping Company 3'),
+      (4, N'Shipping Company 4'),
+      (5, N'Shipping Company 5');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name') AND [object_id] = OBJECT_ID(N'[ShippingCompanies]'))
+          SET IDENTITY_INSERT [ShippingCompanies] OFF;
+info: 5/6/2024 20:13:14.701 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name') AND [object_id] = OBJECT_ID(N'[ShippingCompanies]'))
+          SET IDENTITY_INSERT [ShippingCompanies] ON;
+      INSERT INTO [ShippingCompanies] ([Id], [Name])
+      VALUES (1, N'Shipping Company 1'),
+      (2, N'Shipping Company 2'),
+      (3, N'Shipping Company 3'),
+      (4, N'Shipping Company 4'),
+      (5, N'Shipping Company 5');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name') AND [object_id] = OBJECT_ID(N'[ShippingCompanies]'))
+          SET IDENTITY_INSERT [ShippingCompanies] OFF;
+dbug: 5/6/2024 20:13:14.702 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:14.703 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:14.704 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:14.704 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConfirmedAt', N'CreatedAt', N'UpdatedAt', N'UserId') AND [object_id] = OBJECT_ID(N'[Orders]'))
+          SET IDENTITY_INSERT [Orders] ON;
+      INSERT INTO [Orders] ([Id], [ConfirmedAt], [CreatedAt], [UpdatedAt], [UserId])
+      VALUES (1, NULL, '0001-01-01T00:00:00.0000000', NULL, N'5'),
+      (2, NULL, '0001-01-01T00:00:00.0000000', NULL, N'4'),
+      (3, NULL, '0001-01-01T00:00:00.0000000', NULL, N'5'),
+      (4, NULL, '0001-01-01T00:00:00.0000000', NULL, N'6'),
+      (5, NULL, '0001-01-01T00:00:00.0000000', NULL, N'5'),
+      (6, NULL, '0001-01-01T00:00:00.0000000', NULL, N'7'),
+      (7, NULL, '0001-01-01T00:00:00.0000000', NULL, N'6'),
+      (8, NULL, '0001-01-01T00:00:00.0000000', NULL, N'5');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConfirmedAt', N'CreatedAt', N'UpdatedAt', N'UserId') AND [object_id] = OBJECT_ID(N'[Orders]'))
+          SET IDENTITY_INSERT [Orders] OFF;
+info: 5/6/2024 20:13:14.998 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConfirmedAt', N'CreatedAt', N'UpdatedAt', N'UserId') AND [object_id] = OBJECT_ID(N'[Orders]'))
+          SET IDENTITY_INSERT [Orders] ON;
+      INSERT INTO [Orders] ([Id], [ConfirmedAt], [CreatedAt], [UpdatedAt], [UserId])
+      VALUES (1, NULL, '0001-01-01T00:00:00.0000000', NULL, N'5'),
+      (2, NULL, '0001-01-01T00:00:00.0000000', NULL, N'4'),
+      (3, NULL, '0001-01-01T00:00:00.0000000', NULL, N'5'),
+      (4, NULL, '0001-01-01T00:00:00.0000000', NULL, N'6'),
+      (5, NULL, '0001-01-01T00:00:00.0000000', NULL, N'5'),
+      (6, NULL, '0001-01-01T00:00:00.0000000', NULL, N'7'),
+      (7, NULL, '0001-01-01T00:00:00.0000000', NULL, N'6'),
+      (8, NULL, '0001-01-01T00:00:00.0000000', NULL, N'5');
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'ConfirmedAt', N'CreatedAt', N'UpdatedAt', N'UserId') AND [object_id] = OBJECT_ID(N'[Orders]'))
+          SET IDENTITY_INSERT [Orders] OFF;
+dbug: 5/6/2024 20:13:14.999 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:15.000 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:15.001 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:15.002 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'OrderId', N'Price', N'Quantity') AND [object_id] = OBJECT_ID(N'[Products]'))
+          SET IDENTITY_INSERT [Products] ON;
+      INSERT INTO [Products] ([Id], [Name], [OrderId], [Price], [Quantity])
+      VALUES (1, N'Product 1', 1, 10.0, 0),
+      (2, N'Product 2', 5, 20.0, 0),
+      (3, N'Product 3', 2, 30.0, 0),
+      (4, N'Product 4', 3, 40.0, 0),
+      (5, N'Product 5', 4, 50.0, 0);
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'OrderId', N'Price', N'Quantity') AND [object_id] = OBJECT_ID(N'[Products]'))
+          SET IDENTITY_INSERT [Products] OFF;
+info: 5/6/2024 20:13:15.038 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'OrderId', N'Price', N'Quantity') AND [object_id] = OBJECT_ID(N'[Products]'))
+          SET IDENTITY_INSERT [Products] ON;
+      INSERT INTO [Products] ([Id], [Name], [OrderId], [Price], [Quantity])
+      VALUES (1, N'Product 1', 1, 10.0, 0),
+      (2, N'Product 2', 5, 20.0, 0),
+      (3, N'Product 3', 2, 30.0, 0),
+      (4, N'Product 4', 3, 40.0, 0),
+      (5, N'Product 5', 4, 50.0, 0);
+      IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'Id', N'Name', N'OrderId', N'Price', N'Quantity') AND [object_id] = OBJECT_ID(N'[Products]'))
+          SET IDENTITY_INSERT [Products] OFF;
+dbug: 5/6/2024 20:13:15.039 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:15.040 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:15.041 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:15.042 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+info: 5/6/2024 20:13:15.052 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
+dbug: 5/6/2024 20:13:15.053 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:15.054 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:15.054 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:15.055 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+info: 5/6/2024 20:13:15.060 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;
+dbug: 5/6/2024 20:13:15.061 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:15.062 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:15.063 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:15.064 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+info: 5/6/2024 20:13:15.067 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
+dbug: 5/6/2024 20:13:15.067 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:15.068 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:15.069 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:15.070 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+info: 5/6/2024 20:13:15.073 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
+dbug: 5/6/2024 20:13:15.073 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:15.074 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:15.075 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:15.077 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+info: 5/6/2024 20:13:16.048 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
+dbug: 5/6/2024 20:13:16.050 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:16.050 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:16.052 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:16.053 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+info: 5/6/2024 20:13:16.092 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
+dbug: 5/6/2024 20:13:16.094 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:16.095 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:16.095 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:16.096 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+info: 5/6/2024 20:13:16.124 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;
+dbug: 5/6/2024 20:13:16.125 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:16.126 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:16.127 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:16.127 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);
+info: 5/6/2024 20:13:16.139 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_Orders_UserId] ON [Orders] ([UserId]);
+dbug: 5/6/2024 20:13:16.140 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:16.141 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:16.142 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (2ms).
+dbug: 5/6/2024 20:13:16.143 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);
+info: 5/6/2024 20:13:16.154 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      CREATE INDEX [IX_Products_OrderId] ON [Products] ([OrderId]);
+dbug: 5/6/2024 20:13:16.155 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+dbug: 5/6/2024 20:13:16.156 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+dbug: 5/6/2024 20:13:16.156 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (1ms).
+dbug: 5/6/2024 20:13:16.157 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+      VALUES (N'20240506171252_Initial', N'8.0.4');
+info: 5/6/2024 20:13:16.166 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+      VALUES (N'20240506171252_Initial', N'8.0.4');
+dbug: 5/6/2024 20:13:16.169 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+dbug: 5/6/2024 20:13:16.176 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+dbug: 5/6/2024 20:13:16.178 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+dbug: 5/6/2024 20:13:16.179 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:16.180 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:13:16.182 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:13:16.184 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:13:16.185 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (0ms).
+warn: 5/6/2024 20:14:45.907 CoreEventId.SensitiveDataLoggingEnabledWarning[10400] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+dbug: 5/6/2024 20:14:46.547 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:14:46.756 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Order>()
+          .FirstOrDefault(e => EF.Property<int>(e, "Id") == __p_0)'
+dbug: 5/6/2024 20:14:47.290 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Order>(
+          asyncEnumerable: new SingleQueryingEnumerable<Order>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Order.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Order.ConfirmedAt (DateTime?), 1], [Property: Order.CreatedAt (DateTime) Required, 2], [Property: Order.UpdatedAt (DateTime?), 3], [Property: Order.UserId (string) Required FK Index, 4] }
+                  SELECT TOP(1) o.Id, o.ConfirmedAt, o.CreatedAt, o.UpdatedAt, o.UserId
+                  FROM Orders AS o
+                  WHERE o.Id == @__p_0), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Order>, 
+              Domain.Data.Context.ECommerceContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: 5/6/2024 20:14:47.402 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:14:47.467 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (78ms).
+dbug: 5/6/2024 20:14:47.478 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:14:48.011 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:14:48.022 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:14:48.039 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (12ms).
+dbug: 5/6/2024 20:14:48.062 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (39ms).
+dbug: 5/6/2024 20:14:48.078 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__p_0='8'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+info: 5/6/2024 20:14:48.182 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (103ms) [Parameters=[@__p_0='8'], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [o].[Id], [o].[ConfirmedAt], [o].[CreatedAt], [o].[UpdatedAt], [o].[UserId]
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__p_0
+dbug: 5/6/2024 20:14:48.279 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'ECommerceContext' started tracking 'Order' entity with key '{Id: 8}'.
+dbug: 5/6/2024 20:14:48.346 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:14:48.355 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 166ms reading results.
+dbug: 5/6/2024 20:14:48.362 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:14:48.371 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (8ms).
+dbug: 5/6/2024 20:14:48.391 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'Order' entity with key '{Id: 8}' tracked by 'ECommerceContext' changed state from 'Unchanged' to 'Deleted'.
+dbug: 5/6/2024 20:14:48.418 CoreEventId.SaveChangesStarting[10004] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:14:48.424 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:14:48.462 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'ECommerceContext'.
+dbug: 5/6/2024 20:14:48.642 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:14:48.645 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:14:48.650 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:14:48.651 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:14:48.652 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+dbug: 5/6/2024 20:14:48.653 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='8'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+info: 5/6/2024 20:14:48.669 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (16ms) [Parameters=[@p0='8'], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      DELETE FROM [Orders]
+      OUTPUT 1
+      WHERE [Id] = @p0;
+dbug: 5/6/2024 20:14:48.682 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:14:48.684 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 13ms reading results.
+dbug: 5/6/2024 20:14:48.689 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:14:48.690 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:14:48.701 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'Order' entity with key '{Id: 8}' tracked by 'ECommerceContext' changed state from 'Deleted' to 'Detached'.
+dbug: 5/6/2024 20:14:48.705 CoreEventId.SaveChangesCompleted[10005] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges completed for 'ECommerceContext' with 1 entities written to the database.
+dbug: 5/6/2024 20:14:48.730 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:14:48.737 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:14:48.741 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (2ms).
+dbug: 5/6/2024 20:15:40.995 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:15:41.004 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Product>()
+          .Where(p => __productIds_0
+              .Contains(p.Id))'
+dbug: 5/6/2024 20:15:41.063 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<Product>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Projection Mapping:
+                  EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: Product.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Product.Name (string) Required, 1], [Property: Product.OrderId (int?) FK Index, 2], [Property: Product.Price (decimal) Required, 3], [Property: Product.Quantity (int) Required, 4] }
+              SELECT p.Id, p.Name, p.OrderId, p.Price, p.Quantity
+              FROM Products AS p
+              WHERE p.Id IN (
+                  SELECT p0.value
+                  FROM OPENJSON(@__productIds_0) WITH (value int '') AS p0)), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Product>, 
+          Domain.Data.Context.ECommerceContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 5/6/2024 20:15:41.071 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:15:41.072 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (1ms).
+dbug: 5/6/2024 20:15:41.073 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.074 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.074 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:15:41.076 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (2ms).
+dbug: 5/6/2024 20:15:41.082 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (8ms).
+dbug: 5/6/2024 20:15:41.083 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__productIds_0='[1]' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[Name], [p].[OrderId], [p].[Price], [p].[Quantity]
+      FROM [Products] AS [p]
+      WHERE [p].[Id] IN (
+          SELECT [p0].[value]
+          FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+      )
+info: 5/6/2024 20:15:41.111 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (28ms) [Parameters=[@__productIds_0='[1]' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[Name], [p].[OrderId], [p].[Price], [p].[Quantity]
+      FROM [Products] AS [p]
+      WHERE [p].[Id] IN (
+          SELECT [p0].[value]
+          FROM OPENJSON(@__productIds_0) WITH ([value] int '$') AS [p0]
+      )
+dbug: 5/6/2024 20:15:41.121 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'ECommerceContext' started tracking 'Product' entity with key '{Id: 1}'.
+dbug: 5/6/2024 20:15:41.134 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.135 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 22ms reading results.
+dbug: 5/6/2024 20:15:41.135 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.136 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:15:41.155 CoreEventId.ValueGenerated[10808] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      'ECommerceContext' generated temporary value '-2147482647' for the property 'Order.Id'.
+dbug: 5/6/2024 20:15:41.174 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'Product' entity with key '{Id: 1}' tracked by 'ECommerceContext' changed state from 'Unchanged' to 'Modified'.
+dbug: 5/6/2024 20:15:41.179 CoreEventId.ForeignKeyChangeDetected[10803] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The foreign key property 'Product.OrderId' was detected as changed from '1' to '-2147482647' for entity with key '{Id: 1}'.
+dbug: 5/6/2024 20:15:41.190 CoreEventId.ReferenceChangeDetected[10805] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The navigation 'Product.Order' for entity with key '{Id: 1}' was detected as changed.
+dbug: 5/6/2024 20:15:41.196 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'ECommerceContext' started tracking 'Order' entity with key '{Id: -2147482647}'.
+dbug: 5/6/2024 20:15:41.198 CoreEventId.SaveChangesStarting[10004] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:15:41.199 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'ECommerceContext'.
+dbug: 5/6/2024 20:15:41.210 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'ECommerceContext'.
+dbug: 5/6/2024 20:15:41.233 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.234 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.237 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+dbug: 5/6/2024 20:15:41.246 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'ReadCommitted'.
+dbug: 5/6/2024 20:15:41.247 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:15:41.248 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:15:41.250 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (2ms).
+dbug: 5/6/2024 20:15:41.252 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0=NULL (DbType = DateTime2), @p1='2024-05-06T17:15:29.5980000Z', @p2=NULL (DbType = DateTime2), @p3='5' (Nullable = false) (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [Orders] ([ConfirmedAt], [CreatedAt], [UpdatedAt], [UserId])
+      OUTPUT INSERTED.[Id]
+      VALUES (@p0, @p1, @p2, @p3);
+info: 5/6/2024 20:15:41.262 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (11ms) [Parameters=[@p0=NULL (DbType = DateTime2), @p1='2024-05-06T17:15:29.5980000Z', @p2=NULL (DbType = DateTime2), @p3='5' (Nullable = false) (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      INSERT INTO [Orders] ([ConfirmedAt], [CreatedAt], [UpdatedAt], [UserId])
+      OUTPUT INSERTED.[Id]
+      VALUES (@p0, @p1, @p2, @p3);
+dbug: 5/6/2024 20:15:41.273 CoreEventId.ForeignKeyChangeDetected[10803] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The foreign key property 'Order.Id' was detected as changed from '-2147482647' to '9' for entity with key '{Id: 9}'.
+dbug: 5/6/2024 20:15:41.279 CoreEventId.ForeignKeyChangeDetected[10803] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The foreign key property 'Product.OrderId' was detected as changed from '-2147482647' to '9' for entity with key '{Id: 1}'.
+dbug: 5/6/2024 20:15:41.282 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.282 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 19ms reading results.
+dbug: 5/6/2024 20:15:41.286 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:15:41.286 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:15:41.287 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:15:41.288 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p5='1', @p4='9' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      UPDATE [Products] SET [OrderId] = @p4
+      OUTPUT 1
+      WHERE [Id] = @p5;
+info: 5/6/2024 20:15:41.296 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (7ms) [Parameters=[@p5='1', @p4='9' (Nullable = true)], CommandType='Text', CommandTimeout='30']
+      SET IMPLICIT_TRANSACTIONS OFF;
+      SET NOCOUNT ON;
+      UPDATE [Products] SET [OrderId] = @p4
+      OUTPUT 1
+      WHERE [Id] = @p5;
+dbug: 5/6/2024 20:15:41.297 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.298 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 1ms reading results.
+dbug: 5/6/2024 20:15:41.304 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+dbug: 5/6/2024 20:15:41.312 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+dbug: 5/6/2024 20:15:41.315 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.315 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:15:41.318 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+dbug: 5/6/2024 20:15:41.323 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'Order' entity with key '{Id: 9}' tracked by 'ECommerceContext' changed state from 'Added' to 'Unchanged'.
+dbug: 5/6/2024 20:15:41.324 CoreEventId.StateChanged[10807] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The 'Product' entity with key '{Id: 1}' tracked by 'ECommerceContext' changed state from 'Modified' to 'Unchanged'.
+dbug: 5/6/2024 20:15:41.325 CoreEventId.SaveChangesCompleted[10005] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges completed for 'ECommerceContext' with 2 entities written to the database.
+dbug: 5/6/2024 20:15:41.330 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:15:41.330 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:41.331 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (0ms).
+dbug: 5/6/2024 20:15:59.718 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:15:59.723 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Order>()
+          .Where(x => x.Id == __request_Id_0)
+          .OrderBy(x => x.ConfirmedAt)
+          .Count()'
+dbug: 5/6/2024 20:15:59.745 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<int>(
+          asyncEnumerable: new SingleQueryingEnumerable<int>(
+              (RelationalQueryContext)queryContext, 
+              RelationalCommandCache.QueryExpression(
+                  Projection Mapping:
+                      EmptyProjectionMember -> 0
+                  SELECT COUNT(*)
+                  FROM Orders AS o
+                  WHERE o.Id == @__request_Id_0), 
+              null, 
+              Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, int>, 
+              Domain.Data.Context.ECommerceContext, 
+              False, 
+              False, 
+              True
+          ), 
+          cancellationToken: queryContext.CancellationToken)'
+dbug: 5/6/2024 20:15:59.757 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:15:59.758 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (1ms).
+dbug: 5/6/2024 20:15:59.761 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:59.763 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:59.764 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:15:59.765 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:15:59.765 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:15:59.766 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_Id_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__request_Id_0
+info: 5/6/2024 20:15:59.770 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (4ms) [Parameters=[@__request_Id_0='1'], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__request_Id_0
+dbug: 5/6/2024 20:15:59.774 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:59.775 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 3ms reading results.
+dbug: 5/6/2024 20:15:59.779 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:59.780 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (1ms).
+dbug: 5/6/2024 20:15:59.786 CoreEventId.QueryCompilationStarting[10111] (Microsoft.EntityFrameworkCore.Query) 
+      Compiling query expression: 
+      'DbSet<Order>()
+          .Where(x => x.Id == __request_Id_0)
+          .OrderBy(x => x.ConfirmedAt)
+          .Skip(__p_1)
+          .Take(__p_2)
+          .Select(x => new ConfirmedOrderDto{ 
+              Id = x.Id, 
+              Products = x.Products, 
+              CreatedAt = x.CreatedAt, 
+              UserId = x.UserId, 
+              ConfirmedAt = x.ConfirmedAt 
+          }
+          )'
+dbug: 5/6/2024 20:15:59.880 CoreEventId.QueryExecutionPlanned[10107] (Microsoft.EntityFrameworkCore.Query) 
+      Generated query execution expression: 
+      'queryContext => new SingleQueryingEnumerable<ConfirmedOrderDto>(
+          (RelationalQueryContext)queryContext, 
+          RelationalCommandCache.QueryExpression(
+              Client Projections:
+                  0 -> 0
+                  1 -> Dictionary<IProperty, int> { [Property: Product.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 1], [Property: Product.Name (string) Required, 2], [Property: Product.OrderId (int?) FK Index, 3], [Property: Product.Price (decimal) Required, 4], [Property: Product.Quantity (int) Required, 5] }
+                  2 -> 1
+                  3 -> 6
+                  4 -> 7
+                  5 -> 8
+              SELECT t.Id, p.Id, p.Name, p.OrderId, p.Price, p.Quantity, t.CreatedAt, t.UserId, t.ConfirmedAt
+              FROM 
+              (
+                  SELECT o.Id, o.CreatedAt, o.UserId, o.ConfirmedAt
+                  FROM Orders AS o
+                  WHERE o.Id == @__request_Id_0
+                  ORDER BY o.ConfirmedAt ASC
+                  OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+              ) AS t
+              LEFT JOIN Products AS p ON t.Id == p.OrderId
+              ORDER BY t.ConfirmedAt ASC, t.Id ASC), 
+          null, 
+          Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, ConfirmedOrderDto>, 
+          Domain.Data.Context.ECommerceContext, 
+          False, 
+          False, 
+          True
+      )'
+dbug: 5/6/2024 20:15:59.884 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:59.885 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:59.886 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:15:59.887 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:15:59.888 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:15:59.888 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_Id_0='1', @__p_1='0', @__p_2='1'], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [p].[Id], [p].[Name], [p].[OrderId], [p].[Price], [p].[Quantity], [t].[CreatedAt], [t].[UserId], [t].[ConfirmedAt]
+      FROM (
+          SELECT [o].[Id], [o].[CreatedAt], [o].[UserId], [o].[ConfirmedAt]
+          FROM [Orders] AS [o]
+          WHERE [o].[Id] = @__request_Id_0
+          ORDER BY [o].[ConfirmedAt]
+          OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+      ) AS [t]
+      LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[OrderId]
+      ORDER BY [t].[ConfirmedAt], [t].[Id]
+info: 5/6/2024 20:15:59.898 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (10ms) [Parameters=[@__request_Id_0='1', @__p_1='0', @__p_2='1'], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [p].[Id], [p].[Name], [p].[OrderId], [p].[Price], [p].[Quantity], [t].[CreatedAt], [t].[UserId], [t].[ConfirmedAt]
+      FROM (
+          SELECT [o].[Id], [o].[CreatedAt], [o].[UserId], [o].[ConfirmedAt]
+          FROM [Orders] AS [o]
+          WHERE [o].[Id] = @__request_Id_0
+          ORDER BY [o].[ConfirmedAt]
+          OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+      ) AS [t]
+      LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[OrderId]
+      ORDER BY [t].[ConfirmedAt], [t].[Id]
+dbug: 5/6/2024 20:15:59.907 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:59.907 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 7ms reading results.
+dbug: 5/6/2024 20:15:59.908 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:59.908 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:15:59.934 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:15:59.935 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:15:59.937 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (1ms).
+dbug: 5/6/2024 20:16:09.931 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 8.0.4 initialized 'ECommerceContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.4' with options: SensitiveDataLoggingEnabled MigrationsAssembly=Infrastructure 
+dbug: 5/6/2024 20:16:09.936 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+dbug: 5/6/2024 20:16:09.937 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (0ms).
+dbug: 5/6/2024 20:16:09.937 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:16:09.938 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:16:09.938 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:16:09.939 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:16:09.939 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:16:09.940 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_Id_0='2'], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__request_Id_0
+info: 5/6/2024 20:16:09.949 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[@__request_Id_0='2'], CommandType='Text', CommandTimeout='30']
+      SELECT COUNT(*)
+      FROM [Orders] AS [o]
+      WHERE [o].[Id] = @__request_Id_0
+dbug: 5/6/2024 20:16:09.954 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:16:09.956 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 4ms reading results.
+dbug: 5/6/2024 20:16:09.961 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:16:09.964 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (2ms).
+dbug: 5/6/2024 20:16:09.967 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:16:09.968 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:16:09.969 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+dbug: 5/6/2024 20:16:09.970 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+dbug: 5/6/2024 20:16:09.970 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (1ms).
+dbug: 5/6/2024 20:16:09.971 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@__request_Id_0='2', @__p_1='0', @__p_2='1'], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [p].[Id], [p].[Name], [p].[OrderId], [p].[Price], [p].[Quantity], [t].[CreatedAt], [t].[UserId], [t].[ConfirmedAt]
+      FROM (
+          SELECT [o].[Id], [o].[CreatedAt], [o].[UserId], [o].[ConfirmedAt]
+          FROM [Orders] AS [o]
+          WHERE [o].[Id] = @__request_Id_0
+          ORDER BY [o].[ConfirmedAt]
+          OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+      ) AS [t]
+      LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[OrderId]
+      ORDER BY [t].[ConfirmedAt], [t].[Id]
+info: 5/6/2024 20:16:09.980 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (9ms) [Parameters=[@__request_Id_0='2', @__p_1='0', @__p_2='1'], CommandType='Text', CommandTimeout='30']
+      SELECT [t].[Id], [p].[Id], [p].[Name], [p].[OrderId], [p].[Price], [p].[Quantity], [t].[CreatedAt], [t].[UserId], [t].[ConfirmedAt]
+      FROM (
+          SELECT [o].[Id], [o].[CreatedAt], [o].[UserId], [o].[ConfirmedAt]
+          FROM [Orders] AS [o]
+          WHERE [o].[Id] = @__request_Id_0
+          ORDER BY [o].[ConfirmedAt]
+          OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+      ) AS [t]
+      LEFT JOIN [Products] AS [p] ON [t].[Id] = [p].[OrderId]
+      ORDER BY [t].[ConfirmedAt], [t].[Id]
+dbug: 5/6/2024 20:16:09.983 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'ECommerceContext' started tracking 'Product' entity with key '{Id: 3}'.
+dbug: 5/6/2024 20:16:09.985 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:16:09.985 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'ECommerceSystem' on server '.' is being disposed after spending 3ms reading results.
+dbug: 5/6/2024 20:16:09.986 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:16:09.987 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'ECommerceSystem' on server '.' (0ms).
+dbug: 5/6/2024 20:16:09.995 CoreEventId.ContextDisposed[10407] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      'ECommerceContext' disposed.
+dbug: 5/6/2024 20:16:09.997 RelationalEventId.ConnectionDisposing[20007] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposing connection to database 'ECommerceSystem' on server '.'.
+dbug: 5/6/2024 20:16:10.000 RelationalEventId.ConnectionDisposed[20008] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Disposed connection to database '' on server '' (2ms).

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ECommerceContext))]
-    [Migration("20240503132820_Seeding")]
-    partial class Seeding
+    [Migration("20240506171252_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,13 @@ namespace Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("OrderDate")
+                    b.Property<DateTime?>("ConfirmedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
@@ -50,50 +56,50 @@ namespace Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2555),
-                            UserId = "2"
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "5"
                         },
                         new
                         {
                             Id = 2,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2559),
-                            UserId = "1"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2561),
-                            UserId = "2"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2564),
-                            UserId = "3"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2566),
-                            UserId = "2"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2568),
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserId = "4"
                         },
                         new
                         {
+                            Id = 3,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "5"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "6"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "5"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "7"
+                        },
+                        new
+                        {
                             Id = 7,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2571),
-                            UserId = "3"
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "6"
                         },
                         new
                         {
                             Id = 8,
-                            OrderDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2573),
-                            UserId = "2"
+                            CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserId = "5"
                         });
                 });
 
@@ -109,11 +115,14 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OrderId")
+                    b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -127,35 +136,40 @@ namespace Infrastructure.Migrations
                             Id = 1,
                             Name = "Product 1",
                             OrderId = 1,
-                            Price = 10.00m
+                            Price = 10.00m,
+                            Quantity = 0
                         },
                         new
                         {
                             Id = 2,
                             Name = "Product 2",
                             OrderId = 5,
-                            Price = 20.00m
+                            Price = 20.00m,
+                            Quantity = 0
                         },
                         new
                         {
                             Id = 3,
                             Name = "Product 3",
                             OrderId = 2,
-                            Price = 30.00m
+                            Price = 30.00m,
+                            Quantity = 0
                         },
                         new
                         {
                             Id = 4,
                             Name = "Product 4",
                             OrderId = 3,
-                            Price = 40.00m
+                            Price = 40.00m,
+                            Quantity = 0
                         },
                         new
                         {
                             Id = 5,
                             Name = "Product 5",
                             OrderId = 4,
-                            Price = 50.00m
+                            Price = 50.00m,
+                            Quantity = 0
                         });
                 });
 
@@ -273,61 +287,76 @@ namespace Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1",
+                            Id = "4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "66eb0dd9-0b2b-4c6b-9815-02ba33077db4",
-                            CreationDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2447),
+                            ConcurrencyStamp = "a7212f26-2cfc-4d95-b04f-a08ffb26038f",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3474),
                             Email = "john.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6601f2f1-d437-4890-a5a4-0b6cbf47e73b",
+                            SecurityStamp = "eb3801f9-aecc-4e60-8e0e-844a9b68b434",
                             TwoFactorEnabled = false,
                             UserName = "john doe"
                         },
                         new
                         {
-                            Id = "2",
+                            Id = "5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9961c018-d2f1-41b2-a3bd-8f07324637db",
-                            CreationDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2506),
+                            ConcurrencyStamp = "cfdb335e-efd9-4a04-a6c4-f529edca3fac",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3554),
                             Email = "jane.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "359bb106-f85b-4a9c-98db-afb29b3da200",
+                            SecurityStamp = "a60e1e8d-a594-4026-a528-25eb5df28b2e",
                             TwoFactorEnabled = false,
                             UserName = "jane doe"
                         },
                         new
                         {
-                            Id = "3",
+                            Id = "6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0fcdb75c-2d1b-44fa-a908-06b455381c37",
-                            CreationDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2527),
+                            ConcurrencyStamp = "a10b9168-5b4f-423f-9774-c868b4b2805e",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3583),
+                            Email = "jane.doe@example.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PasswordHash = "password123",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "183d1ad4-4b46-41a0-befa-177c33463645",
+                            TwoFactorEnabled = false,
+                            UserName = "jane doe"
+                        },
+                        new
+                        {
+                            Id = "7",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "0639ae10-2f28-485e-9279-ab3be37016c3",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3611),
                             Email = "Sara.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "620ff498-0fbc-4815-9fd1-9fd875f5c219",
+                            SecurityStamp = "75a9edd3-b43b-4f4b-aad7-631e4efe3902",
                             TwoFactorEnabled = false,
                             UserName = "Sara doe"
                         },
                         new
                         {
-                            Id = "4",
+                            Id = "8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a8461ec7-ed6d-4130-b504-e612b057f4ee",
-                            CreationDate = new DateTime(2024, 5, 3, 16, 28, 19, 56, DateTimeKind.Local).AddTicks(2533),
+                            ConcurrencyStamp = "4f2281db-bb9e-4fda-b19e-42ecb43b408f",
+                            CreationDate = new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3624),
                             Email = "Sandy.Jakson@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cdf69d3c-5c5a-41bb-ac93-63fedd3d628f",
+                            SecurityStamp = "17ffedcc-b3d1-47fa-9635-88d3835e827c",
                             TwoFactorEnabled = false,
                             UserName = "Sandy Jakson"
                         });
@@ -482,8 +511,7 @@ namespace Infrastructure.Migrations
                     b.HasOne("Domain.Data.Entities.Order", "Order")
                         .WithMany("Products")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Order");
                 });

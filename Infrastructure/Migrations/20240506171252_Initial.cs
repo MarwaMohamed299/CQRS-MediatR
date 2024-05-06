@@ -178,7 +178,9 @@ namespace Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ConfirmedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
@@ -200,7 +202,8 @@ namespace Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    OrderId = table.Column<int>(type: "int", nullable: false)
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    OrderId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -209,7 +212,20 @@ namespace Infrastructure.Migrations
                         name: "FK_Products_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "CreationDate", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[,]
+                {
+                    { "4", 0, "a7212f26-2cfc-4d95-b04f-a08ffb26038f", new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3474), "john.doe@example.com", false, false, null, null, null, "password123", null, false, "eb3801f9-aecc-4e60-8e0e-844a9b68b434", false, "john doe" },
+                    { "5", 0, "cfdb335e-efd9-4a04-a6c4-f529edca3fac", new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3554), "jane.doe@example.com", false, false, null, null, null, "password123", null, false, "a60e1e8d-a594-4026-a528-25eb5df28b2e", false, "jane doe" },
+                    { "6", 0, "a10b9168-5b4f-423f-9774-c868b4b2805e", new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3583), "jane.doe@example.com", false, false, null, null, null, "password123", null, false, "183d1ad4-4b46-41a0-befa-177c33463645", false, "jane doe" },
+                    { "7", 0, "0639ae10-2f28-485e-9279-ab3be37016c3", new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3611), "Sara.doe@example.com", false, false, null, null, null, "password123", null, false, "75a9edd3-b43b-4f4b-aad7-631e4efe3902", false, "Sara doe" },
+                    { "8", 0, "4f2281db-bb9e-4fda-b19e-42ecb43b408f", new DateTime(2024, 5, 6, 20, 12, 51, 162, DateTimeKind.Local).AddTicks(3624), "Sandy.Jakson@example.com", false, false, null, null, null, "password123", null, false, "17ffedcc-b3d1-47fa-9635-88d3835e827c", false, "Sandy Jakson" }
                 });
 
             migrationBuilder.InsertData(
@@ -222,6 +238,33 @@ namespace Infrastructure.Migrations
                     { 3, "Shipping Company 3" },
                     { 4, "Shipping Company 4" },
                     { 5, "Shipping Company 5" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Orders",
+                columns: new[] { "Id", "ConfirmedAt", "CreatedAt", "UpdatedAt", "UserId" },
+                values: new object[,]
+                {
+                    { 1, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "5" },
+                    { 2, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "4" },
+                    { 3, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "5" },
+                    { 4, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "6" },
+                    { 5, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "5" },
+                    { 6, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "7" },
+                    { 7, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "6" },
+                    { 8, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "5" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "Name", "OrderId", "Price", "Quantity" },
+                values: new object[,]
+                {
+                    { 1, "Product 1", 1, 10.00m, 0 },
+                    { 2, "Product 2", 5, 20.00m, 0 },
+                    { 3, "Product 3", 2, 30.00m, 0 },
+                    { 4, "Product 4", 3, 40.00m, 0 },
+                    { 5, "Product 5", 4, 50.00m, 0 }
                 });
 
             migrationBuilder.CreateIndex(
