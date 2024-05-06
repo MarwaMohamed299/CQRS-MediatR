@@ -14,7 +14,7 @@ namespace Application.Orders.Commands.ConfirmOrder
     public record ConfirmOrderCommand: IRequest<int>
     {
         public int Id { get; init; }
-        public List<Product> Products { get; init; } = new List<Product>();
+        public List<UpdateOrderProductDto> Products { get; init; } = new List<UpdateOrderProductDto>();
         public string UserId { get; init; } = string.Empty;
         public DateTime? ConfirmedAt { get; init; }
 

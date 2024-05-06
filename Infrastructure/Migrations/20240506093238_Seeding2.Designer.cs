@@ -4,6 +4,7 @@ using Domain.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(ECommerceContext))]
-    partial class ECommerceContextModelSnapshot : ModelSnapshot
+    [Migration("20240506093238_Seeding2")]
+    partial class Seeding2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -286,14 +289,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ed7ae808-892b-4938-b697-2ae15acb8e2b",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5080),
+                            ConcurrencyStamp = "b3085ed1-372b-4504-af38-5c62ddd2f11f",
+                            CreationDate = new DateTime(2024, 5, 6, 12, 32, 37, 579, DateTimeKind.Local).AddTicks(5907),
                             Email = "john.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "456b6f9e-26e7-4d8e-81c9-d241b82e0da0",
+                            SecurityStamp = "7ac651e6-8ffc-429e-ad21-1e2e4a47c769",
                             TwoFactorEnabled = false,
                             UserName = "john doe"
                         },
@@ -301,14 +304,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "5",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "57abc45d-db06-4d99-b8bb-d18b1829d035",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5159),
+                            ConcurrencyStamp = "9b0e8013-5f76-409c-a7ea-05678914c9a4",
+                            CreationDate = new DateTime(2024, 5, 6, 12, 32, 37, 579, DateTimeKind.Local).AddTicks(6005),
                             Email = "jane.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0ee8f974-8f4f-4308-92e7-2a760fd6a52f",
+                            SecurityStamp = "8f5949d9-38ca-4c27-bfcc-748ead3b9912",
                             TwoFactorEnabled = false,
                             UserName = "jane doe"
                         },
@@ -316,14 +319,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1119b84d-fc58-4e1d-8c2e-00ea86b3ff96",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5178),
+                            ConcurrencyStamp = "ec6209b5-4062-4062-a198-ba3cbc556e17",
+                            CreationDate = new DateTime(2024, 5, 6, 12, 32, 37, 579, DateTimeKind.Local).AddTicks(6034),
                             Email = "jane.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4a3ad63e-b16d-4166-bc5b-964f2517f083",
+                            SecurityStamp = "2ca7da2f-423a-467a-b8e0-d80b0b9a4ae6",
                             TwoFactorEnabled = false,
                             UserName = "jane doe"
                         },
@@ -331,14 +334,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "7",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a74ec944-263c-4078-a1cd-7ace482a352a",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5190),
+                            ConcurrencyStamp = "409a4f8d-7771-4e56-8bff-3abc8cad2de2",
+                            CreationDate = new DateTime(2024, 5, 6, 12, 32, 37, 579, DateTimeKind.Local).AddTicks(6062),
                             Email = "Sara.doe@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9954a903-6e16-4e3c-9605-7066ec09dad6",
+                            SecurityStamp = "ef5f54f6-e141-4fce-be77-baed17d5c6e7",
                             TwoFactorEnabled = false,
                             UserName = "Sara doe"
                         },
@@ -346,14 +349,14 @@ namespace Infrastructure.Migrations
                         {
                             Id = "8",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f224ef67-b4bb-49da-9299-dc4e4d800c07",
-                            CreationDate = new DateTime(2024, 5, 6, 19, 43, 25, 91, DateTimeKind.Local).AddTicks(5202),
+                            ConcurrencyStamp = "4cb4caec-cdab-4bcc-9fcc-bc992428cecd",
+                            CreationDate = new DateTime(2024, 5, 6, 12, 32, 37, 579, DateTimeKind.Local).AddTicks(6086),
                             Email = "Sandy.Jakson@example.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PasswordHash = "password123",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "da6308b6-6be1-4f1e-b95f-09b475e67393",
+                            SecurityStamp = "41490ce5-a8d4-4bd4-b30f-b12637827c2c",
                             TwoFactorEnabled = false,
                             UserName = "Sandy Jakson"
                         });

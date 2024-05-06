@@ -13,7 +13,7 @@ namespace Application.Orders.Queries.GetConfirmedOrdersWithPagination
         public string UserId { get; set; } = string.Empty;
 
         public DateTime CreatedAt { get; set; }
-        public DateTime? ConfirmedAt { get; set; }
+        public DateTime? ConfirmedAt { get; set; } = DateTime.Now;
         public List<Product> Products { get; set; } = new List<Product>();
     }
 }

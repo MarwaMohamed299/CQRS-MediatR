@@ -13,7 +13,6 @@ namespace Application.Orders.Queries.GetConfirmedOrdersWithPagination
     public record GetConfirmedOrderWithPaginagtionQuery : IRequest<PaginatedList<ConfirmedOrderDto>>
     {
         public int Id { get; init; }
-       // public DateTime ConfirmedAt { get; set; }
         public int PageNumber { get; init; } = 1;
         public int PageSize { get; init; } = 10;
     }

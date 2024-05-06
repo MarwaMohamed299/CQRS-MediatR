@@ -1,44 +1,49 @@
 ﻿using Application.Interfaces;
+using Application.Orders.Commands.CreateOrder;
 using Ardalis.GuardClauses;
 using Domain.Data.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Orders.Commands.UpdateOrder
+namespace Application.Orders.Commands.UpdateOrder;
+
+public record UpdateOrderCommand : IRequest<string>
 {
-    public record  UpdateOrderCommand : IRequest
+    public int Id { get; init; }
+    public List<AddOrderProductDto> Products { get; set; } = new List<AddOrderProductDto>();
+    public string UserId { get; init; } = string.Empty;
+    public DateTime? UpdatedAt { get; init; } = DateTime.Now.AddMinutes(60);
+}
+
+public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand, string>
+{
+    private readonly IAppDbContext _context;
+
+    public UpdateOrderCommandHandler(IAppDbContext context)
     {
-        public int Id { get; init; }
-
-        public List<Product> Products { get; set; } = new List<Product>();
-        public string UserId { get; init; } = string.Empty;
-        public DateTime CreatedAt { get; init; }
-        public DateTime? UpdatedAt { get; init; }
-        public DateTime? ConfirmedAt { get; init; }
-    }
-    public class UpdateOrderCommandHandler : IRequestHandler<UpdateOrderCommand>
-    {
-        private readonly IAppDbContext _context;
-
-        public UpdateOrderCommandHandler(IAppDbContext context)
-        {
-            _context = context;
-        }
-
-        public async Task Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
-        {
-            var order = await _context.Orders.FindAsync(new object[] { request.Id }, cancellationToken);
-
-            Guard.Against.NotFound(request.Id, order);
-
-            order.Products = request.Products;
-
-            await _context.SaveChangesAsync(cancellationToken);
-        }
+        _context = context;
     }
 
+    public async Task<string> Handle(UpdateOrderCommand request, CancellationToken cancellationToken)
+    {
+        var order = await _context.Orders.FindAsync(new object[] { request.Id }, cancellationToken);
+
+        Guard.Against.NotFound(request.Id, order);
+        order.UserId = request.UserId;
+        order.UpdatedAt = request.UpdatedAt ?? DateTime.Now.AddMinutes(60);
+        var updatedProducts = request.Products.Select(p => new UpdateOrderProductDto
+        {
+            Id = p.Id,
+            Quantity = p.Quantity
+        }).ToList();
+
+
+        await _context.SaveChangesAsync(cancellationToken);
+
+        return "Order updated successfully!";
+    }
 }

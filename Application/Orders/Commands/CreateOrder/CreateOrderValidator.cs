@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Orders.Commands.CreateOrder;
 
-public class CreateOrderValidator : AbstractValidator<CreateOrderCommandQuery>
+public class CreateOrderValidator : AbstractValidator<CreateOrderCommand>
 {
     public CreateOrderValidator() {
         RuleFor(a => a.UserId)
