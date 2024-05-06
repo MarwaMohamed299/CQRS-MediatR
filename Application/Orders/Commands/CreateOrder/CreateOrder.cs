@@ -11,15 +11,14 @@ using System.Threading.Tasks;
 
 namespace Application.Orders.Commands.CreateOrder
 {
-    public record CreateOrderCommand : IRequest<int>
+    public record CreateOrderCommandQuery : IRequest<CreateOrderDto>
     {
-        public List<Product> Products  { get; init; } = new List<Product>();
+        public List<AddOrderProductDto> Products  { get; init; } = new List<AddOrderProductDto>();
         public string UserId { get; init; } = string.Empty;
-        public DateTime CreatedAt { get; init; }
-        public DateTime? UpdatedAt { get; init; }
+        public DateTime CreatedAt { get; init; } = DateTime.Now;
         
     }
-    public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand,int>
+    public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommandQuery ,CreateOrderDto >
     {
         private readonly IAppDbContext _context;
 
@@ -28,16 +27,15 @@ namespace Application.Orders.Commands.CreateOrder
             _context = appDbContext;
         }
 
-        public async Task<int> Handle(CreateOrderCommand request , CancellationToken cancellationToken)
+        public async Task<CreateOrderDto> Handle(CreateOrderCommandQuery request, CancellationToken cancellationToken)
         {
             var order = new Order
             {
                 UserId = request.UserId,
                 CreatedAt = request.CreatedAt,
-                UpdatedAt = request.UpdatedAt,                
             };
 
-            var products = await _context.Products  ///?
+            var products = await _context.Products  //?
                  .Where(p => request.Products.Equals(p.Id))
                  .ToListAsync();
 
@@ -47,9 +45,10 @@ namespace Application.Orders.Commands.CreateOrder
 
             await _context.SaveChangesAsync(cancellationToken);
 
-            return order.Id;
-
+            return new CreateOrderDto( request.UserId , request.Products);
         }
+
+      
 
     }
 }

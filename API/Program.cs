@@ -1,5 +1,8 @@
 using Domain.Data.Context;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,14 +13,16 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 #endregion
 
-var app = builder.Build();
 
-#region ConnectionString
-//var ConnectionString = builder.Configuration.GetConnectionString("ECommerceSystem");
-//builder.Services.AddDbContext<ECommerceContext>(options => options.UseSqlServer(ConnectionString));
+#region Layers Configuration
+builder.Services.AddApplicationServices(builder.Configuration);
+
+builder.Services.AddInfrastructureServices(builder.Configuration);
 #endregion
+
 
 #region CORS Policy
 builder.Services.AddCors(options =>
@@ -30,6 +35,9 @@ builder.Services.AddCors(options =>
     });
 });
 #endregion
+
+var app = builder.Build();
+
 
 if (app.Environment.IsDevelopment())
 {

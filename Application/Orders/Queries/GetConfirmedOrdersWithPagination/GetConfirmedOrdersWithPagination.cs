@@ -13,11 +13,11 @@ namespace Application.Orders.Queries.GetConfirmedOrdersWithPagination
     public record GetConfirmedOrderWithPaginagtionQuery : IRequest<PaginatedList<ConfirmedOrderDto>>
     {
         public int Id { get; init; }
-        public DateTime ConfirmedAt { get; set; }
+       // public DateTime ConfirmedAt { get; set; }
         public int PageNumber { get; init; } = 1;
         public int PageSize { get; init; } = 10;
     }
-    public class GetConfirmedOrdersWithPagination
+    public class GetConfirmedOrdersWithPagination :IRequestHandler<GetConfirmedOrderWithPaginagtionQuery , PaginatedList<ConfirmedOrderDto>>
     {
         private readonly IAppDbContext _context;
 
@@ -25,6 +25,7 @@ namespace Application.Orders.Queries.GetConfirmedOrdersWithPagination
         {
             _context = context;
         }
+
         public async Task<PaginatedList<ConfirmedOrderDto>> Handle(GetConfirmedOrderWithPaginagtionQuery request, CancellationToken cancellationToken)
         {
             var query = _context.Orders
@@ -48,5 +49,6 @@ namespace Application.Orders.Queries.GetConfirmedOrdersWithPagination
 
             return new PaginatedList<ConfirmedOrderDto>(items, totalCount, request.PageNumber, request.PageSize);
         }
+
     }
 }
