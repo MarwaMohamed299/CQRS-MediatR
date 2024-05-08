@@ -1,7 +1,10 @@
 ﻿using Application.Abstractions.Services;
+using Application.Products.Queries.GetProductsById;
 using Application.Products.Queries.GetProductsWithPagination;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static Application.Products.Queries.GetProductsWithPagination.GetProductsWithPagination;
 
 namespace API.Controllers
 {
@@ -9,27 +12,41 @@ namespace API.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProducQueryService _productService;
 
-        public ProductsController(IProducQueryService producQuerytService)
+        private readonly IMediator _mediator;
+
+        public ProductsController(IMediator mediator)
         {
-            _productService = producQuerytService;
+            _mediator = mediator;
         }
-        [HttpGet("{page}/{countPerPage}")]
 
-        public async Task<ActionResult<IEnumerable<ProductPaginationDto>>> GetAll(int page, int countPerPage)
+        [HttpGet]
+        public async Task<IActionResult> GetProducts(int page, int countPerPage)
         {
-            var products = await _productService.GetAllProductsWithPaginationAsync(page, countPerPage);
-            return Ok(products);
+            var query = new GetAllProductsWithPaginationQuery
+            {
+                Page = page,
+                CountPerPage = countPerPage
+            };
 
+            var result = await _mediator.Send(query);
+
+            return Ok(result);
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductReadDto>> GetById(int id)
+        public async Task<IActionResult> GetProductById(int id)
         {
-            var product = await _productService.GetProductByIdAsync(id);
+            var query = new GetProductByIdQuery { Id = id };
+            var product = await _mediator.Send(query);
 
-            return Ok(product);
+            if (product == null)
+            {
+                return NotFound(); 
+            }
+
+            return Ok(product); 
         }
     }
 }
+//}

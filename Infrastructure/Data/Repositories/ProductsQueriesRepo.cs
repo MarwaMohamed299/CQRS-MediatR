@@ -33,9 +33,18 @@ namespace Domain.Data.Repositories
             return await _ecommerce.Products.FindAsync(id);
         }
 
+        //public async Task<Product>UpdateAsync(Product product)
+        //{
+        //    await SaveChangesAsync();
+        //    return await _ecommerce.Update(product);
+        //}
         public async Task<int> GetCountAsync()
         {
             return await _ecommerce.Products.CountAsync();
+        }
+        public async Task <int> SaveChangesAsync()
+        {
+           return await _ecommerce.SaveChangesAsync();
         }
     }
 }
