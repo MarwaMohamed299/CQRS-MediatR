@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Application;
+using Application.Interfaces.Repositories.Orders;
+using Domain.Data.Repositories;
+using Application.Abstractions.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

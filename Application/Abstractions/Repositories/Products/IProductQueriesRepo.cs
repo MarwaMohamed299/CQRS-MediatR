@@ -1,4 +1,6 @@
-﻿using Domain.Data.Entities;
+﻿using Application.Common.Models;
+using Application.Orders.Queries.GetConfirmedOrdersWithPagination;
+using Domain.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +11,9 @@ namespace Application.Interfaces.Repositories.Orders
 {
     public interface IProductQueriesRepo
     {
-        Task<Product> GetAllProductsWithPaginationAsync(int page, int countPerPage);
-        Task<Product> GetByIdAsync(int id);
+        Task<int> GetCountAsync();
+        Task<IEnumerable<Product>> GetAllProductsWithPaginationAsync(int page, int countPerPage);
+        Task<Product?> GetByIdAsync(int id);
 
     }
 }

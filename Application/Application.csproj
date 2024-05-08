@@ -19,8 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Products\Commands\" />
-    <Folder Include="Products\Queries\GetProductsWithPagination\" />
+    <Folder Include="Models\" />
+    <Folder Include="Products\Queries\GetProductsById\" />
+    <Folder Include="Products\Queries\Handlers\" />
   </ItemGroup>
 
 </Project>
