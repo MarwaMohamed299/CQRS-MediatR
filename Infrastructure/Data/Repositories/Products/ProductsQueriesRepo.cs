@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Domain.Data.Repositories
+namespace Infrastructure.Data.Repositories.Products
 {
-    public class ProductsQueriesRepo : IProductQueriesRepo 
+    public class ProductsQueriesRepo : IProductQueriesRepo
     {
         private readonly ECommerceContext _ecommerce;
 
@@ -32,19 +32,13 @@ namespace Domain.Data.Repositories
         {
             return await _ecommerce.Products.FindAsync(id);
         }
-
-        //public async Task<Product>UpdateAsync(Product product)
-        //{
-        //    await SaveChangesAsync();
-        //    return await _ecommerce.Update(product);
-        //}
         public async Task<int> GetCountAsync()
         {
             return await _ecommerce.Products.CountAsync();
         }
-        public async Task <int> SaveChangesAsync()
+        public async Task<int> SaveChangesAsync()
         {
-           return await _ecommerce.SaveChangesAsync();
+            return await _ecommerce.SaveChangesAsync();
         }
     }
 }

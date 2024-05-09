@@ -1,8 +1,11 @@
-﻿using Application.Abstractions.Services;
+﻿using Application.Orders.Commands.CreateOrder;
+using Application.Orders.Commands.UpdateOrder;
+using Application.Products.Commands.AddProduct;
+using Application.Products.Commands.DeleteProduct;
+using Application.Products.Commands.EditProduct;
+using Application.Products.Commands.UpdateProduct;
 using Application.Products.Queries.GetProductsById;
-using Application.Products.Queries.GetProductsWithPagination;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static Application.Products.Queries.GetProductsWithPagination.GetProductsWithPagination;
 
@@ -35,18 +38,30 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProductById(int id)
+        public async Task<ActionResult> GetProductById(int id)
         {
             var query = new GetProductByIdQuery { Id = id };
-            var product = await _mediator.Send(query);
-
-            if (product == null)
-            {
-                return NotFound(); 
-            }
-
-            return Ok(product); 
+            var result = await _mediator.Send(query);
+            return Ok(result);
         }
+        [HttpPost]
+        public async Task<ActionResult<AddProductDto>>AddProductAsync(AddProductCommand command)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+        [HttpPut("{id}")]
+        public async Task<ActionResult<UpdateProductDto>> UpdateProductAsync(UpdateProductCommand command, int id)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+        [HttpDelete("id")]
+        public async Task<ActionResult> DeleteOrderAsync(DeleteProductCommand command , int id)
+        {
+            var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
     }
 }
-//}
